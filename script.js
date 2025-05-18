@@ -8,7 +8,7 @@ async function askAI() {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+      "Authorization": "Bearer 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"
     },
     body: JSON.stringify({
       model: "gpt-4",
