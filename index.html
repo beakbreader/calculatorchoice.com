@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chemistry Molar Mass Converter</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Molar Mass & Conversion Tool</h1>
+    <input id="inputFormula" placeholder="e.g. H2O or Water" />
+    <input id="inputValue" placeholder="Amount (grams or moles)" />
+    <select id="inputType">
+      <option value="grams">Grams</option>
+      <option value="moles">Moles</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
