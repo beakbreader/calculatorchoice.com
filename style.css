@@ -1,0 +1,72 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+  color: #333;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #7b2cbf;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #5f27cd;
+}
+.hero input {
+  padding: 1rem;
+  font-size: 1rem;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.card {
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0,0,0,0.05);
+}
