@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compare your baby's height and weight with average growth percentiles.">
+  <title>Baby Growth Chart – Track Milestones</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Baby Growth Chart – Track Milestones</h1>
+    <p>Compare your baby's height and weight with average growth percentiles.</p>
+    
+        <label for="age">Baby Age (months):</label>
+        <input type="number" id="age">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight">
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height">
+        <button onclick="showGrowth()">Analyze</button>
+        
+    <div class="result" id="result"></div>
+    <div class="notice">⚠️ This tool is for informational purposes only and does not constitute medical advice.</div>
+  </div>
+</body>
+</html>
