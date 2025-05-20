@@ -1,20 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("calculator");
-  container.innerHTML = `
-    <label>Principal Amount: <input type="number" id="principal"></label><br>
-    <label>Annual Interest Rate (%): <input type="number" id="rate"></label><br>
-    <label>Years: <input type="number" id="years"></label><br>
-    <label>Compounds per Year: <input type="number" id="compound"></label><br>
-    <button onclick="calculateCompound()">Calculate</button>
-    <p id="result"></p>
-  `;
+// Compound interest calculator
 
-  window.calculateCompound = function () {
-    const P = parseFloat(document.getElementById("principal").value);
-    const r = parseFloat(document.getElementById("rate").value) / 100;
-    const t = parseFloat(document.getElementById("years").value);
-    const n = parseFloat(document.getElementById("compound").value);
-    const A = P * Math.pow(1 + r / n, n * t);
-    document.getElementById("result").innerText = "Final Amount: $" + A.toFixed(2);
-  };
+document.getElementById("compound-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const P = parseFloat(document.getElementById("principal").value);
+  const PMT = parseFloat(document.getElementById("contribution").value);
+  const r = parseFloat(document.getElementById("rate").value) / 100;
+  const t = parseInt(document.getElementById("years").value);
+  const n = parseInt(document.getElementById("frequency").value);
+
+  // Compound interest formula with contributions
+  let futureValue = P * Math.pow(1 + r / n, n * t);
+  for (let i = 1; i <= t * n; i++) {
+    futureValue += PMT * Math.pow(1 + r / n, (n * t) - i);
+  }
+
+  const totalContributions = P + PMT * t * 12;
+  const interestEarned = futureValue - totalContributions;
+
+  document.getElementById("final-balance").textContent = `$${futureValue.toFixed(2)}`;
+  document.getElementById("total-contributions").textContent = `$${totalContributions.toFixed(2)}`;
+  document.getElementById("interest-earned").textContent = `$${interestEarned.toFixed(2)}`;
+
+  document.getElementById("results").classList.remove("hidden");
 });
