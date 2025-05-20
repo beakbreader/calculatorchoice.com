@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Estimate your monthly loan payments with our easy-to-use loan calculator. Enter your amount, interest rate, and term to calculate." />
+  <meta name="keywords" content="Loan Calculator, Monthly Payments, Interest Rate, Financial Tool" />
+  <meta name="author" content="NovaCalc" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Loan Calculator - NovaCalc" />
+  <meta property="og:description" content="Quickly estimate your monthly loan payments based on loan amount, interest rate, and term." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/calculators/loan-calculator" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan Calculator",
+    "url": "https://yourdomain.com/calculators/loan-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "A simple and intuitive tool to calculate your monthly loan payments."
+  }
+  </script>
+
+  <title>Loan Calculator | NovaCalc</title>
+  <link rel="stylesheet" href="loan-calculator.css" />
+</head>
+<body>
+  <header>
+    <h1>NovaCalc</h1>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/calculators">Calculators</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="calculator">
+      <h2>Loan Calculator</h2>
+      <p>Estimate your monthly loan payment based on interest rate, loan term, and amount.</p>
+      <form id="loanForm">
+        <input type="number" id="amount" placeholder="Loan Amount ($)" required />
+        <input type="number" id="interest" placeholder="Annual Interest Rate (%)" step="0.01" required />
+        <input type="number" id="years" placeholder="Loan Term (Years)" required />
+        <button type="submit">Calculate</button>
+      </form>
+      <div class="result" id="result"></div>
+      <p style="font-size: 0.75rem; margin-top: 1rem;">* This calculator is for educational use only and not financial advice.</p>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 NovaCalc. All rights reserved.
+  </footer>
+  <script src="loan-calculator.js"></script>
+</body>
+</html>
