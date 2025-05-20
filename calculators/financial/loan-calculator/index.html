@@ -1,5 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  ...
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loan Calculator | Calculator Choice</title>
+  <meta name="description" content="Calculate your loan repayments with our free Loan Calculator. Determine monthly payments, total interest, and more.">
+  <meta property="og:title" content="Loan Calculator | Calculator Choice" />
+  <meta property="og:description" content="Calculate your loan repayments with our free Loan Calculator. Determine monthly payments, total interest, and more." />
+  <meta property="og:url" content="https://calculatorchoice.com/loan-calculator" />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Loan Calculator",
+    "url": "https://calculatorchoice.com/loan-calculator",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "Calculate your loan repayments with our free Loan Calculator. Determine monthly payments, total interest, and more."
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="https://calculatorchoice.com">Calculator Choice</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/calculators">Calculators</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="calculator-section">
+      <h1>Loan Calculator</h1>
+      <form id="loan-form">
+        <div class="form-group">
+          <label for="amount">Loan Amount ($):</label>
+          <input type="number" id="amount" required />
+        </div>
+        <div class="form-group">
+          <label for="interest">Annual Interest Rate (%):</label>
+          <input type="number" id="interest" step="0.01" required />
+        </div>
+        <div class="form-group">
+          <label for="years">Loan Term (Years):</label>
+          <input type="number" id="years" required />
+        </div>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="results" class="results">
+        <h2>Results:</h2>
+        <p>Monthly Payment: <span id="monthly-payment">$0.00</span></p>
+        <p>Total Payment: <span id="total-payment">$0.00</span></p>
+        <p>Total Interest: <span id="total-interest">$0.00</span></p>
+      </div>
+    </section>
+
+    <section class="educational-content">
+      <h2>Understanding Loan Repayments</h2>
+      <p>When you take out a loan, it's essential to understand how your repayments are calculated. The monthly payment is determined based on the loan amount, the annual interest rate, and the loan term.</p>
+      <h3>Formula:</h3>
+      <p>
+        Monthly Payment = [P x r x (1 + r)^n] / [(1 + r)^n – 1]
+      </p>
+      <ul>
+        <li><strong>P</strong> = Loan amount</li>
+        <li><strong>r</strong> = Monthly interest rate (annual rate divided by 12)</li>
+        <li><strong>n</strong> = Total number of payments (loan term in months)</li>
+      </ul>
+      <p>Using this formula helps you determine how much you'll pay each month, the total amount over the life of the loan, and the total interest paid.</p>
+    </section>
+  </main>
+
+  <footer>
+    <h3>Related Calculators</h3>
+    <ul>
+      <li><a href="/mortgage-calculator">Mortgage Calculator</a></li>
+      <li><a href="/car-loan-calculator">Car Loan Calculator</a></li>
+      <li><a href="/personal-loan-calculator">Personal Loan Calculator</a></li>
+    </ul>
+  </footer>
+
+  <script src="calculator.js"></script>
+</body>
 </html>
