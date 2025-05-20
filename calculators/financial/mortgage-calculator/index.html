@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mortgage Calculator</title>
-  <meta name="description" content="Calculate your monthly mortgage payments easily with our free Mortgage Calculator.">
+  <meta name="description" content="Calculate your monthly mortgage payments including taxes and insurance.">
   <meta property="og:title" content="Mortgage Calculator">
-  <meta property="og:description" content="Calculate your monthly mortgage payments with this elegant, sunset-themed calculator.">
+  <meta property="og:description" content="Estimate monthly payments with property tax and insurance included.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourdomain.com/mortgage-calculator">
   <meta property="og:image" content="https://yourdomain.com/preview.jpg">
@@ -16,30 +16,41 @@
     "@context": "https://schema.org",
     "@type": "Calculator",
     "name": "Mortgage Calculator",
-    "description": "An easy-to-use tool for calculating monthly mortgage payments based on loan amount, interest rate, and term.",
+    "description": "Calculate monthly mortgage payments including loan amount, interest rate, property taxes, and insurance.",
     "url": "https://yourdomain.com/mortgage-calculator"
   }
   </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Mortgage Calculator</h1>
+  <div class="calculator-card">
+    <h1>Loan Calculator</h1>
+    <p>Estimate your monthly loan payment based on interest rate, loan term, and amount.</p>
     <form id="mortgage-form">
       <label>
-        Loan Amount ($):
+        Loan Amount ($)
         <input type="number" id="loanAmount" required>
       </label>
       <label>
-        Interest Rate (%):
+        Annual Interest Rate (%)
         <input type="number" step="0.01" id="interestRate" required>
       </label>
       <label>
-        Loan Term (years):
+        Loan Term (Years)
         <input type="number" id="loanTerm" required>
+      </label>
+      <label>
+        Property Tax (% per year)
+        <input type="number" step="0.01" id="propertyTax">
+      </label>
+      <label>
+        Home Insurance ($ per year)
+        <input type="number" id="homeInsurance">
       </label>
       <button type="submit">Calculate</button>
     </form>
     <div id="result" class="result"></div>
+    <p class="disclaimer">* This calculator is for educational use only and not financial advice.</p>
+    <a href="/" class="back-link">&larr; Back to Home</a>
   </div>
   <script src="calculator.js"></script>
 </body>

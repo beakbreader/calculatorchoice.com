@@ -1,70 +1,98 @@
-/* Sunset Gradient Theme */
+/* Sunset Gradient Background */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-  color: #fff;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f78ca0 0%, #f9748f 50%, #fd868c 100%);
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-start;
   min-height: 100vh;
 }
 
-.container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px);
-  max-width: 400px;
+/* Card Container */
+.calculator-card {
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 420px;
   width: 100%;
-}
-
-h1 {
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  text-shadow: 1px 1px 4px #000;
 }
 
+/* Headings */
+h1 {
+  font-size: 1.8rem;
+  color: #4b0082;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Labels & Inputs */
 form label {
   display: block;
   margin-bottom: 1rem;
-  font-weight: bold;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
 }
 
 input[type="number"] {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 8px;
-  border: none;
   margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
 }
 
+/* Button */
 button {
   width: 100%;
+  background-color: #ff5e78;
+  border: none;
+  color: white;
+  font-weight: bold;
   padding: 0.75rem;
   margin-top: 1rem;
-  background: #ff7e5f;
-  border: none;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
   border-radius: 10px;
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: background 0.3s ease, transform 0.2s;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #feb47b;
-  transform: scale(1.05);
+  background-color: #ff788f;
 }
 
+/* Result */
 .result {
   margin-top: 1.5rem;
-  font-size: 1.2rem;
-  text-align: center;
+  font-size: 1.1rem;
+  color: #333;
 }
 
+/* Disclaimer & Link */
+.disclaimer {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #4b0082;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
