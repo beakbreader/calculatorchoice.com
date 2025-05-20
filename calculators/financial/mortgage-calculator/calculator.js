@@ -1,35 +1,31 @@
-// Enhanced Mortgage Calculator
-document.getElementById('mortgage-form').addEventListener('submit', function (e) {
+// Mortgage calculator logic
+
+document.getElementById("mortgage-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Retrieve values
-  const loanAmount = parseFloat(document.getElementById('loanAmount').value);
-  const annualRate = parseFloat(document.getElementById('interestRate').value);
-  const years = parseInt(document.getElementById('loanTerm').value);
-  const taxRate = parseFloat(document.getElementById('propertyTax').value) || 0;
-  const insuranceYearly = parseFloat(document.getElementById('homeInsurance').value) || 0;
+  // Get input values
+  const price = parseFloat(document.getElementById("price").value);
+  const down = parseFloat(document.getElementById("down").value);
+  const years = parseInt(document.getElementById("years").value);
+  const rate = parseFloat(document.getElementById("rate").value);
 
-  const monthlyRate = annualRate / 100 / 12;
-  const totalMonths = years * 12;
+  const loanAmount = price - down;
+  const monthlyRate = rate / 100 / 12;
+  const totalPayments = years * 12;
 
-  // Monthly principal & interest payment
-  const x = Math.pow(1 + monthlyRate, totalMonths);
-  const monthlyPI = (loanAmount * monthlyRate * x) / (x - 1);
+  // Monthly payment formula
+  const monthly =
+    (loanAmount * monthlyRate) /
+    (1 - Math.pow(1 + monthlyRate, -totalPayments));
 
-  // Monthly taxes and insurance
-  const monthlyTax = (loanAmount * (taxRate / 100)) / 12;
-  const monthlyInsurance = insuranceYearly / 12;
+  const totalPayment = monthly * totalPayments;
+  const totalInterest = totalPayment - loanAmount;
 
-  const totalMonthly = monthlyPI + monthlyTax + monthlyInsurance;
+  // Display results
+  document.getElementById("loan-amount").textContent = `$${loanAmount.toFixed(2)}`;
+  document.getElementById("monthly").textContent = `$${monthly.toFixed(2)}`;
+  document.getElementById("total-payment").textContent = `$${totalPayment.toFixed(2)}`;
+  document.getElementById("total-interest").textContent = `$${totalInterest.toFixed(2)}`;
 
-  const result = document.getElementById('result');
-  if (!isNaN(totalMonthly)) {
-    result.innerHTML = `
-      Monthly Payment: <strong>$${totalMonthly.toFixed(2)}</strong><br>
-      (Principal & Interest: $${monthlyPI.toFixed(2)}<br>
-      Taxes: $${monthlyTax.toFixed(2)} | Insurance: $${monthlyInsurance.toFixed(2)})
-    `;
-  } else {
-    result.textContent = "Please enter valid values.";
-  }
+  document.getElementById("results").classList.remove("hidden");
 });

@@ -2,56 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mortgage Calculator</title>
-  <meta name="description" content="Calculate your monthly mortgage payments including taxes and insurance.">
+  <meta name="description" content="Calculate your monthly mortgage payments based on home price, down payment, interest rate, and loan term.">
   <meta property="og:title" content="Mortgage Calculator">
-  <meta property="og:description" content="Estimate monthly payments with property tax and insurance included.">
+  <meta property="og:description" content="Easy-to-use mortgage calculator with beautiful design. Estimate monthly payments fast.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com/mortgage-calculator">
-  <meta property="og:image" content="https://yourdomain.com/preview.jpg">
-  <link rel="stylesheet" href="style.css">
+  <meta property="og:image" content="mortgage-thumbnail.png">
+  <meta property="og:url" content="https://yourwebsite.com/mortgage-calculator">
+  <link rel="stylesheet" href="style.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Calculator",
     "name": "Mortgage Calculator",
-    "description": "Calculate monthly mortgage payments including loan amount, interest rate, property taxes, and insurance.",
-    "url": "https://yourdomain.com/mortgage-calculator"
+    "description": "A tool to calculate monthly mortgage payments based on loan details.",
+    "url": "https://yourwebsite.com/mortgage-calculator"
   }
   </script>
 </head>
 <body>
-  <div class="calculator-card">
-    <h1>Loan Calculator</h1>
-    <p>Estimate your monthly loan payment based on interest rate, loan term, and amount.</p>
+  <main class="calculator-card">
+    <h1>Mortgage Calculator</h1>
     <form id="mortgage-form">
-      <label>
-        Loan Amount ($)
-        <input type="number" id="loanAmount" required>
+      <label>Home Price
+        <input type="number" id="price" placeholder="e.g. 350000" required />
       </label>
-      <label>
-        Annual Interest Rate (%)
-        <input type="number" step="0.01" id="interestRate" required>
+      <label>Down Payment
+        <input type="number" id="down" placeholder="e.g. 50000" required />
       </label>
-      <label>
-        Loan Term (Years)
-        <input type="number" id="loanTerm" required>
+      <label>Loan Term (Years)
+        <input type="number" id="years" placeholder="e.g. 30" required />
       </label>
-      <label>
-        Property Tax (% per year)
-        <input type="number" step="0.01" id="propertyTax">
-      </label>
-      <label>
-        Home Insurance ($ per year)
-        <input type="number" id="homeInsurance">
+      <label>Interest Rate (%)
+        <input type="number" id="rate" placeholder="e.g. 4.5" step="0.01" required />
       </label>
       <button type="submit">Calculate</button>
     </form>
-    <div id="result" class="result"></div>
-    <p class="disclaimer">* This calculator is for educational use only and not financial advice.</p>
-    <a href="/" class="back-link">&larr; Back to Home</a>
-  </div>
+    <section id="results" class="hidden">
+      <h2>Results</h2>
+      <p>Loan Amount: <strong id="loan-amount"></strong></p>
+      <p>Monthly Payment: <strong id="monthly"></strong></p>
+      <p>Total Payment: <strong id="total-payment"></strong></p>
+      <p>Total Interest: <strong id="total-interest"></strong></p>
+    </section>
+    <p class="disclaimer">Disclaimer: This is an estimate. Actual mortgage terms may vary. Consult a financial advisor for exact figures.</p>
+  </main>
   <script src="calculator.js"></script>
 </body>
 </html>
