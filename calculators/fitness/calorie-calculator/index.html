@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calorie Calculator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calorie Calculator</title>
+    <meta name="description" content="Easily calculate your daily calorie needs based on activity level, weight, height, and age.">
+    <meta property="og:title" content="Calorie Calculator">
+    <meta property="og:description" content="Calculate your daily caloric intake to manage weight effectively.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calculatorchoice.com/calorie-calculator">
+    <meta property="og:image" content="https://calculatorchoice.com/images/calorie-calculator.png">
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Calorie Calculator",
+      "url": "https://calculatorchoice.com/calorie-calculator",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All"
+    }
+    </script>
 </head>
 <body>
-  <h1>Calorie Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+    <nav>
+        <a href="https://calculatorchoice.com">Home</a>
+        <input type="text" id="search" placeholder="Search calculators..." />
+    </nav>
+    <main>
+        <section class="calculator-card">
+            <h1>Calorie Calculator</h1>
+            <form id="calorieForm">
+                <label for="age">Age</label>
+                <input type="number" id="age" required />
+
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" required />
+
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" required />
+
+                <label for="activity">Activity Level</label>
+                <select id="activity">
+                    <option value="1.2">Sedentary</option>
+                    <option value="1.375">Lightly active</option>
+                    <option value="1.55">Moderately active</option>
+                    <option value="1.725">Very active</option>
+                    <option value="1.9">Super active</option>
+                </select>
+
+                <button type="submit">Calculate</button>
+            </form>
+            <div id="result"></div>
+        </section>
+        <section class="info">
+            <h2>How this calculator works</h2>
+            <p>This calculator uses the Mifflin-St Jeor Equation to estimate your Basal Metabolic Rate (BMR), then multiplies it by your activity level to determine your daily calorie needs.</p>
+            <p><strong>Formula:</strong></p>
+            <p>Men: 10 × weight + 6.25 × height − 5 × age + 5</p>
+            <p>Women: 10 × weight + 6.25 × height − 5 × age − 161</p>
+            <p><strong>Example:</strong> A 30-year-old female weighing 65 kg and 165 cm tall with moderate activity needs around 2140 calories/day.</p>
+        </section>
+        <section class="disclaimer">
+            <p><strong>Disclaimer:</strong> This tool provides estimates only. Consult a healthcare provider for personal dietary advice.</p>
+        </section>
+    </main>
+    <footer>
+        <div class="links">
+            <a href="https://calculatorchoice.com/bmi-calculator">BMI Calculator</a>
+            <a href="https://calculatorchoice.com/macro-calculator">Macro Calculator</a>
+            <a href="https://calculatorchoice.com/water-intake-calculator">Water Intake Calculator</a>
+        </div>
+        <p class="keywords">calorie calculator · macro calculator · calculate daily calorie needs</p>
+    </footer>
+    <script src="calculator.js"></script>
 </body>
 </html>
