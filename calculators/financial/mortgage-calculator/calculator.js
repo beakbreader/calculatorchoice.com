@@ -1,16 +1,20 @@
-document.getElementById('loanForm').addEventListener('submit', function(e) {
+// Mortgage Calculator Logic
+document.getElementById('mortgage-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const amount = parseFloat(document.getElementById('amount').value);
-  const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
-  const years = parseFloat(document.getElementById('years').value);
-  const n = years * 12;
 
-  const monthly = (amount * interest) / (1 - Math.pow(1 + interest, -n));
+  // Get input values
+  const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+  const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+  const loanTermMonths = parseInt(document.getElementById('loanTerm').value) * 12;
+
+  // Calculate monthly payment
+  const x = Math.pow(1 + interestRate, loanTermMonths);
+  const monthly = (loanAmount * interestRate * x) / (x - 1);
+
   const resultDiv = document.getElementById('result');
-
-  if (!isNaN(monthly) && isFinite(monthly)) {
+  if (!isNaN(monthly)) {
     resultDiv.textContent = `Monthly Payment: $${monthly.toFixed(2)}`;
   } else {
-    resultDiv.textContent = "Please enter valid numbers in all fields.";
+    resultDiv.textContent = "Please enter valid values.";
   }
 });
