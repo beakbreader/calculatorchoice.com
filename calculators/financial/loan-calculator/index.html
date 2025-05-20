@@ -2,34 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loan Repayment Calculator – Estimate Your Monthly Payments Instantly</title>
-  <meta name="description" content="Use our free loan calculator to estimate monthly payments, total interest, and payoff time.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Calculator</title>
+  <meta name="description" content="Calculate your loan payments including interest and total cost over time.">
+  <meta property="og:title" content="Loan Calculator">
+  <meta property="og:description" content="Easy-to-use loan calculator to estimate your payments. Try it now!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="loan-thumbnail.png">
+  <meta property="og:url" content="https://yourwebsite.com/loan-calculator">
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Calculator",
+    "name": "Loan Calculator",
+    "description": "Estimate loan payments based on amount, interest, and term.",
+    "url": "https://yourwebsite.com/loan-calculator"
+  }
+  </script>
 </head>
 <body>
   <main class="calculator-card">
     <h1>Loan Calculator</h1>
-    <p class="subheading">Estimate your monthly loan payment based on interest rate, loan term, and amount.</p>
-    
-    <form id="loanForm">
-      <label>Loan Amount ($)
-        <input type="number" id="amount" required />
+    <form id="loan-form">
+      <label>Loan Amount
+        <input type="number" id="amount" placeholder="e.g. 10000" required />
       </label>
-      <label>Annual Interest Rate (%)
-        <input type="number" id="rate" step="0.01" required />
+      <label>Interest Rate (% per year)
+        <input type="number" id="rate" placeholder="e.g. 5" step="0.01" required />
       </label>
       <label>Loan Term (Years)
-        <input type="number" id="years" required />
+        <input type="number" id="term" placeholder="e.g. 5" required />
+      </label>
+      <label>Payment Frequency
+        <select id="frequency">
+          <option value="monthly">Monthly</option>
+          <option value="biweekly">Bi-weekly</option>
+          <option value="weekly">Weekly</option>
+        </select>
       </label>
       <button type="submit">Calculate</button>
     </form>
-
-    <div id="result"></div>
-    <p class="disclaimer">* This calculator is for educational use only and not financial advice.</p>
-    <a class="back-home" href="/index.html">← Back to Home</a>
+    <section id="results" class="hidden">
+      <h2>Results</h2>
+      <p>Payment Per Period: <strong id="payment"></strong></p>
+      <p>Total Payment: <strong id="total-payment"></strong></p>
+      <p>Total Interest: <strong id="total-interest"></strong></p>
+    </section>
+    <p class="disclaimer">Disclaimer: Estimates are for informational purposes only. Consult with your lender for actual terms.</p>
   </main>
-
   <script src="calculator.js"></script>
 </body>
 </html>

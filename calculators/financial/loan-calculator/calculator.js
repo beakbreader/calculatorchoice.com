@@ -1,17 +1,30 @@
-document.getElementById('loanForm').addEventListener('submit', function (e) {
+// Loan calculator logic
+
+document.getElementById("loan-form").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const amount = parseFloat(document.getElementById('amount').value);
-  const rate = parseFloat(document.getElementById('rate').value) / 100 / 12;
-  const years = parseFloat(document.getElementById('years').value) * 12;
+  const amount = parseFloat(document.getElementById("amount").value);
+  const rate = parseFloat(document.getElementById("rate").value);
+  const term = parseInt(document.getElementById("term").value);
+  const frequency = document.getElementById("frequency").value;
 
-  const payment = (amount * rate) / (1 - Math.pow(1 + rate, -years));
-  const total = payment * years;
-  const interest = total - amount;
+  let periodsPerYear;
+  switch (frequency) {
+    case "monthly": periodsPerYear = 12; break;
+    case "biweekly": periodsPerYear = 26; break;
+    case "weekly": periodsPerYear = 52; break;
+  }
 
-  document.getElementById('result').innerHTML = `
-    <p>Monthly Payment: <strong>$${payment.toFixed(2)}</strong></p>
-    <p>Total Interest: <strong>$${interest.toFixed(2)}</strong></p>
-    <p>Total Repayment: <strong>$${total.toFixed(2)}</strong></p>
-  `;
+  const totalPayments = periodsPerYear * term;
+  const periodRate = (rate / 100) / periodsPerYear;
+
+  const payment = (amount * periodRate) / (1 - Math.pow(1 + periodRate, -totalPayments));
+  const totalPayment = payment * totalPayments;
+  const totalInterest = totalPayment - amount;
+
+  document.getElementById("payment").textContent = `$${payment.toFixed(2)}`;
+  document.getElementById("total-payment").textContent = `$${totalPayment.toFixed(2)}`;
+  document.getElementById("total-interest").textContent = `$${totalInterest.toFixed(2)}`;
+
+  document.getElementById("results").classList.remove("hidden");
 });
