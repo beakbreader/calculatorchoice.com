@@ -1,21 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("calculator");
-  container.innerHTML = `
-    <label>Home Price: <input type="number" id="price"></label><br>
-    <label>Down Payment: <input type="number" id="down"></label><br>
-    <label>Interest Rate (%): <input type="number" id="rate"></label><br>
-    <label>Loan Term (years): <input type="number" id="term"></label><br>
-    <button onclick="calculateMortgage()">Calculate</button>
-    <p id="result"></p>
-  `;
+document.getElementById('loanForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const amount = parseFloat(document.getElementById('amount').value);
+  const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
+  const years = parseFloat(document.getElementById('years').value);
+  const n = years * 12;
 
-  window.calculateMortgage = function () {
-    const price = parseFloat(document.getElementById("price").value);
-    const down = parseFloat(document.getElementById("down").value);
-    const loan = price - down;
-    const rate = parseFloat(document.getElementById("rate").value) / 100 / 12;
-    const term = parseFloat(document.getElementById("term").value) * 12;
-    const payment = (loan * rate) / (1 - Math.pow(1 + rate, -term));
-    document.getElementById("result").innerText = "Monthly Mortgage: $" + payment.toFixed(2);
-  };
+  const monthly = (amount * interest) / (1 - Math.pow(1 + interest, -n));
+  const resultDiv = document.getElementById('result');
+
+  if (!isNaN(monthly) && isFinite(monthly)) {
+    resultDiv.textContent = `Monthly Payment: $${monthly.toFixed(2)}`;
+  } else {
+    resultDiv.textContent = "Please enter valid numbers in all fields.";
+  }
 });
