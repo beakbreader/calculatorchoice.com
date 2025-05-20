@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #ffc0cb, #add8e6);
+  color: #333;
+}
+
+nav {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.logo {
+  font-weight: bold;
+  color: purple;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card h1 {
+  color: purple;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: purple;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #6a0dad;
+  box-shadow: 0 0 10px purple;
+}
+
+.results {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f0f0f0;
+  border-radius: 1rem;
+}
+
+.explanation {
+  max-width: 700px;
+  padding: 2rem;
+  margin-top: 2rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1rem;
+}
+
+footer {
+  background: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer h3 {
+  margin-bottom: 1rem;
+  color: purple;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  margin: 0.5rem 0;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+}

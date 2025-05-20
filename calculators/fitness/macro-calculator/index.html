@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Macro Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Free Macro Calculator to determine your daily protein, carbs, and fat intake based on your goals. Fast, accurate, and easy to use.">
+  <meta property="og:title" content="Macro Calculator | CalculatorChoice">
+  <meta property="og:description" content="Find your perfect macro split for weight loss, maintenance, or muscle gain.">
+  <meta property="og:url" content="https://calculatorchoice.com/macro-calculator">
+  <meta property="og:type" content="website">
+  <title>Macro Calculator | CalculatorChoice</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Macro Calculator",
+    "url": "https://calculatorchoice.com/macro-calculator",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "description": "Calculate your daily macronutrient needs based on your personal metrics and fitness goals."
+  }
+  </script>
 </head>
 <body>
-  <h1>Macro Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <nav>
+    <a href="https://calculatorchoice.com" class="logo">CalculatorChoice</a>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h1>Macro Calculator</h1>
+      <form id="macroForm">
+        <div class="input-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" required>
+        </div>
+        <div class="input-group">
+          <label for="gender">Gender</label>
+          <select id="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" required>
+        </div>
+        <div class="input-group">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" required>
+        </div>
+        <div class="input-group">
+          <label for="activity">Activity Level</label>
+          <select id="activity" required>
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Lightly active</option>
+            <option value="1.55">Moderately active</option>
+            <option value="1.725">Very active</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="goal">Goal</label>
+          <select id="goal" required>
+            <option value="maintain">Maintain</option>
+            <option value="lose">Lose Weight</option>
+            <option value="gain">Gain Muscle</option>
+          </select>
+        </div>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="results" class="results"></div>
+    </section>
+
+    <section class="explanation">
+      <h2>Understanding Your Macros</h2>
+      <p>Macronutrients — proteins, carbohydrates, and fats — are essential for energy, recovery, and overall health. This calculator uses the Mifflin-St Jeor equation to estimate your Basal Metabolic Rate (BMR), then adjusts for activity level to calculate your Total Daily Energy Expenditure (TDEE).</p>
+      <p>Your macros are distributed based on typical fitness goals. For example, a common weight loss split is 40% protein, 30% carbs, and 30% fat, whereas muscle gain often shifts to higher carbs. Adjusting your intake can optimize fat loss or muscle gain while maintaining energy and performance.</p>
+      <p>Example: A 70kg male with moderate activity aiming to maintain weight might need ~2300 calories: 138g protein, 288g carbs, and 77g fat.</p>
+    </section>
+  </main>
+
+  <footer>
+    <h3>Related Calculators</h3>
+    <ul>
+      <li><a href="https://calculatorchoice.com/bmr-calculator">BMR Calculator</a></li>
+      <li><a href="https://calculatorchoice.com/tdee-calculator">TDEE Calculator</a></li>
+      <li><a href="https://calculatorchoice.com/body-fat-calculator">Body Fat Calculator</a></li>
+    </ul>
+  </footer>
+
+  <script src="calculator.js"></script>
 </body>
 </html>
