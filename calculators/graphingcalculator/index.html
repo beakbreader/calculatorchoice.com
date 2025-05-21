@@ -3,58 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Compound Interest Calculator</title>
-  <meta name="description" content="Estimate your future investment growth with our compound interest calculator.">
-  <meta property="og:title" content="Compound Interest Calculator">
-  <meta property="og:description" content="Calculate your investment growth with compounding interest over time.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="compound-thumbnail.png">
-  <meta property="og:url" content="https://yourwebsite.com/compound-interest-calculator">
-  <link rel="stylesheet" href="style.css" />
+  <title>Graphing Calculator | Ultimate Online Function Plotter - CalculatorChoice</title>
+  <meta name="description" content="Use the most advanced online graphing calculator to plot any math function, visualize equations, and analyze graphs interactively. Mobile-friendly, fast, and totally free.">
+  <meta name="keywords" content="graphing calculator, online graph plotter, function grapher, free graphing calculator, interactive math tools, plot equations online, scientific calculator, advanced calculator, calculatorchoice, best graphing calculator, math calculator, plot multiple functions, graph visualization, algebra calculator">
+  <meta property="og:title" content="Ultimate Graphing Calculator | Plot Any Function Online"/>
+  <meta property="og:description" content="Instantly plot math functions and equations. Zoom, pan, and analyze graphs online. The best free graphing calculator for students, teachers, and math lovers."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://calculatorchoice.com/calculators/math/graphing-calculator/"/>
+  <meta property="og:image" content="https://calculatorchoice.com/assets/graphing-calc-og.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Ultimate Graphing Calculator | CalculatorChoice"/>
+  <meta name="twitter:description" content="The most visually stunning and powerful online graphing calculator. Free, no sign-up, and perfect for students and professionals."/>
+  <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Calculator",
-    "name": "Compound Interest Calculator",
-    "description": "Estimate compound interest based on initial investment, rate, duration, and contribution.",
-    "url": "https://yourwebsite.com/compound-interest-calculator"
-  }
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Ultimate Graphing Calculator",
+      "url": "https://calculatorchoice.com/calculators/math/graphing-calculator/",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "All",
+      "description": "Free online graphing calculator to plot functions, visualize equations, and analyze graphs interactively.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
   </script>
 </head>
 <body>
-  <main class="calculator-card">
-    <h1>Compound Interest Calculator</h1>
-    <form id="compound-form">
-      <label>Initial Investment
-        <input type="number" id="principal" placeholder="e.g. 1000" required />
-      </label>
-      <label>Monthly Contribution
-        <input type="number" id="contribution" placeholder="e.g. 100" required />
-      </label>
-      <label>Annual Interest Rate (%)
-        <input type="number" id="rate" placeholder="e.g. 5" step="0.01" required />
-      </label>
-      <label>Years
-        <input type="number" id="years" placeholder="e.g. 10" required />
-      </label>
-      <label>Compounding Frequency
-        <select id="frequency">
-          <option value="1">Yearly</option>
-          <option value="4">Quarterly</option>
-          <option value="12">Monthly</option>
-          <option value="365">Daily</option>
-        </select>
-      </label>
-      <button type="submit">Calculate</button>
-    </form>
-    <section id="results" class="hidden">
-      <h2>Results</h2>
-      <p>Final Balance: <strong id="final-balance"></strong></p>
-      <p>Total Contributions: <strong id="total-contributions"></strong></p>
-      <p>Total Interest Earned: <strong id="interest-earned"></strong></p>
+  <header>
+    <nav>
+      <div class="logo"><a href="https://calculatorchoice.com/">CalculatorChoice</a></div>
+      <ul>
+        <li><a href="https://calculatorchoice.com/">Home</a></li>
+        <li><a href="https://calculatorchoice.com/calculators/math/">Math Calculators</a></li>
+        <li><a href="https://calculatorchoice.com/calculators/financial/">Financial Calculators</a></li>
+        <li><a href="https://calculatorchoice.com/calculators/science/">Science Calculators</a></li>
+        <li><a href="https://calculatorchoice.com/calculators/health/">Health Calculators</a></li>
+      </ul>
+      <form id="search-bar" action="https://calculatorchoice.com/search/">
+        <input type="text" name="q" placeholder="Search calculators..."/>
+        <button type="submit">🔍</button>
+      </form>
+    </nav>
+    <div class="hero">
+      <h1>Ultimate Online Graphing Calculator</h1>
+      <p>Plot, analyze, and interact with math functions. Visualize equations in real time. Free, fast, mobile-ready.</p>
+    </div>
+  </header>
+  <main>
+    <section class="calculator-section">
+      <form id="function-form" autocomplete="off">
+        <label for="function-input">Enter function(s) to plot (e.g. <code>sin(x)</code>, <code>x^2+2</code>):</label>
+        <div class="function-row">
+          <input type="text" id="function-input" name="function-input" placeholder="y = ..." autofocus />
+          <button type="button" id="add-function">+ Add</button>
+        </div>
+        <div id="functions-list"></div>
+        <button type="submit" class="plot-btn">Plot Graph</button>
+      </form>
+      <div class="canvas-wrap">
+        <canvas id="graph-canvas" width="700" height="400"></canvas>
+        <div class="canvas-controls">
+          <button id="zoom-in" title="Zoom In">+</button>
+          <button id="zoom-out" title="Zoom Out">−</button>
+          <button id="reset-view" title="Reset View">⭯</button>
+        </div>
+      </div>
     </section>
-    <p class="disclaimer">Disclaimer: These results are estimates and do not guarantee financial outcomes.</p>
+    <section class="info-section">
+      <h2>How to Use the Graphing Calculator</h2>
+      <ul>
+        <li>Type any valid math expression (e.g., <code>y = 2x + 3</code>, <code>y = cos(x)</code>).</li>
+        <li>Plot multiple functions by adding more fields.</li>
+        <li>Zoom and pan using the buttons or touch/drag on mobile.</li>
+        <li>Perfect for algebra, calculus, trigonometry, and more.</li>
+      </ul>
+      <p>This calculator supports: +, −, ×, ÷, powers, roots, sin, cos, tan, exp, log, abs, and more.</p>
+    </section>
   </main>
+  <footer>
+    <div class="footer-links">
+      <a href="https://calculatorchoice.com/privacy/">Privacy Policy</a>
+      <a href="https://calculatorchoice.com/terms/">Terms of Service</a>
+      <a href="https://calculatorchoice.com/contact/">Contact</a>
+    </div>
+    <div class="seo-keywords">
+      <strong>Popular Searches:</strong>
+      Graphing calculator, plot functions online, free graph calculator, math graph plotter, best online graphing calculator, y=mx+b graph, algebra calculator, trigonometry graph, multiple equations graph, interactive function plotter.
+    </div>
+    <div class="copyright">
+      &copy; 2025 CalculatorChoice.com. All Rights Reserved.
+    </div>
+  </footer>
   <script src="calculator.js"></script>
 </body>
 </html>
