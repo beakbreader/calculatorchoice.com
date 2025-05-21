@@ -1,26 +1,23 @@
-// Compound interest calculator
+// Ultimate Graphing Calculator - CalculatorChoice.com
 
-document.getElementById("compound-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const P = parseFloat(document.getElementById("principal").value);
-  const PMT = parseFloat(document.getElementById("contribution").value);
-  const r = parseFloat(document.getElementById("rate").value) / 100;
-  const t = parseInt(document.getElementById("years").value);
-  const n = parseInt(document.getElementById("frequency").value);
-
-  // Compound interest formula with contributions
-  let futureValue = P * Math.pow(1 + r / n, n * t);
-  for (let i = 1; i <= t * n; i++) {
-    futureValue += PMT * Math.pow(1 + r / n, (n * t) - i);
-  }
-
-  const totalContributions = P + PMT * t * 12;
-  const interestEarned = futureValue - totalContributions;
-
-  document.getElementById("final-balance").textContent = `$${futureValue.toFixed(2)}`;
-  document.getElementById("total-contributions").textContent = `$${totalContributions.toFixed(2)}`;
-  document.getElementById("interest-earned").textContent = `$${interestEarned.toFixed(2)}`;
-
-  document.getElementById("results").classList.remove("hidden");
-});
+// --- Utility: Parse expressions using safe eval-like logic (math.js alternative, no libraries)
+function parseFunction(expr) {
+    // Replace ^ with **, handle basic math functions, allow x variable
+    let safeExpr = expr
+        .replace(/(\d)\s*x/g, '$1*x') // 2x -> 2*x
+        .replace(/x(\d)/g, 'x*$1') // x2 -> x*2
+        .replace(/\^/g, '**')
+        .replace(/sin\(/g, 'Math.sin(')
+        .replace(/cos\(/g, 'Math.cos(')
+        .replace(/tan\(/g, 'Math.tan(')
+        .replace(/abs\(/g, 'Math.abs(')
+        .replace(/log\(/g, 'Math.log10(')
+        .replace(/ln\(/g, 'Math.log(')
+        .replace(/sqrt\(/g, 'Math.sqrt(')
+        .replace(/exp\(/g, 'Math.exp(');
+    // Remove y= or y =
+    safeExpr = safeExpr.replace(/y\s*=\s*/g, '');
+    try {
+        // eslint-disable-next-line no-new-func
+        return new Function('x', `return ${safeExpr};`);
+    }
