@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compound Interest Calculator</title>
+  <meta name="description" content="Estimate your future investment growth with our compound interest calculator.">
+  <meta property="og:title" content="Compound Interest Calculator">
+  <meta property="og:description" content="Calculate your investment growth with compounding interest over time.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="compound-thumbnail.png">
+  <meta property="og:url" content="https://yourwebsite.com/compound-interest-calculator">
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Calculator",
+    "name": "Compound Interest Calculator",
+    "description": "Estimate compound interest based on initial investment, rate, duration, and contribution.",
+    "url": "https://yourwebsite.com/compound-interest-calculator"
+  }
+  </script>
+</head>
+<body>
+  <main class="calculator-card">
+    <h1>Compound Interest Calculator</h1>
+    <form id="compound-form">
+      <label>Initial Investment
+        <input type="number" id="principal" placeholder="e.g. 1000" required />
+      </label>
+      <label>Monthly Contribution
+        <input type="number" id="contribution" placeholder="e.g. 100" required />
+      </label>
+      <label>Annual Interest Rate (%)
+        <input type="number" id="rate" placeholder="e.g. 5" step="0.01" required />
+      </label>
+      <label>Years
+        <input type="number" id="years" placeholder="e.g. 10" required />
+      </label>
+      <label>Compounding Frequency
+        <select id="frequency">
+          <option value="1">Yearly</option>
+          <option value="4">Quarterly</option>
+          <option value="12">Monthly</option>
+          <option value="365">Daily</option>
+        </select>
+      </label>
+      <button type="submit">Calculate</button>
+    </form>
+    <section id="results" class="hidden">
+      <h2>Results</h2>
+      <p>Final Balance: <strong id="final-balance"></strong></p>
+      <p>Total Contributions: <strong id="total-contributions"></strong></p>
+      <p>Total Interest Earned: <strong id="interest-earned"></strong></p>
+    </section>
+    <p class="disclaimer">Disclaimer: These results are estimates and do not guarantee financial outcomes.</p>
+  </main>
+  <script src="calculator.js"></script>
+</body>
+</html>
