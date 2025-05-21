@@ -1,16 +1,20 @@
-function solveQuadratic() {
-  const a = parseFloat(document.getElementById('a').value);
-  const b = parseFloat(document.getElementById('b').value);
-  const c = parseFloat(document.getElementById('c').value);
+function parseAndSolve() {
+  const equation = document.getElementById('equation').value.toLowerCase().replace(/\s+/g, '');
   const resultDiv = document.getElementById('result');
 
-  if (isNaN(a) || isNaN(b) || isNaN(c)) {
-    resultDiv.textContent = 'Please enter valid numbers for a, b, and c.';
+  const match = equation.match(/([+-]?\d*\.?\d*)x\^2([+-]\d*\.?\d*)x([+-]\d*\.?\d*)/);
+  if (!match) {
+    resultDiv.textContent = 'Please enter a valid quadratic expression (e.g., 2x^2+3x-5).';
     return;
   }
 
-  if (a === 0) {
-    resultDiv.textContent = 'This is not a quadratic equation (a cannot be zero).';
+  let [_, a, b, c] = match;
+  a = a === '' || a === '+' ? 1 : a === '-' ? -1 : parseFloat(a);
+  b = b === '' || b === '+' ? 1 : b === '-' ? -1 : parseFloat(b);
+  c = parseFloat(c);
+
+  if (isNaN(a) || isNaN(b) || isNaN(c)) {
+    resultDiv.textContent = 'Error parsing coefficients. Please try again.';
     return;
   }
 
@@ -33,4 +37,31 @@ function solveQuadratic() {
   }
 
   resultDiv.textContent = resultText;
+}
+
+const calculators = [
+  { name: "Quadratic Equation Solver", url: "/calculators/quadratic-equation-solver/" },
+  { name: "Linear Equation Solver", url: "/calculators/linear-equation-solver/" },
+  { name: "Cubic Equation Solver", url: "/calculators/cubic-equation-solver/" },
+  { name: "Percentage Calculator", url: "/calculators/percentage-calculator/" },
+  { name: "Compound Interest Calculator", url: "/calculators/compound-interest-calculator/" }
+];
+
+function filterCalculators() {
+  const input = document.getElementById('searchBar').value.toLowerCase();
+  const resultList = document.getElementById('searchResults');
+  resultList.innerHTML = '';
+
+  if (!input) return;
+
+  calculators.forEach(calc => {
+    if (calc.name.toLowerCase().includes(input)) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = calc.url;
+      a.textContent = calc.name;
+      li.appendChild(a);
+      resultList.appendChild(li);
+    }
+  });
 }
