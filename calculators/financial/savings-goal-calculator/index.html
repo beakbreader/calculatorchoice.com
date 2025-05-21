@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Savings Goal Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savings Goal Calculator | Reach Your Financial Goals</title>
+  <meta name="description" content="Plan your future savings with our free Savings Goal Calculator. See how much to save monthly to reach your goal on time." />
+  <meta property="og:title" content="Savings Goal Calculator" />
+  <meta property="og:description" content="Calculate how much to save monthly to reach your savings goal. Free, instant results." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calculatorchoice.com/calculators/savings-goal/" />
+  <meta property="og:image" content="https://calculatorchoice.com/assets/savings-goal-preview.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Calculator",
+    "name": "Savings Goal Calculator",
+    "description": "Free tool to calculate how much to save monthly to reach a specific savings goal.",
+    "url": "https://calculatorchoice.com/calculators/savings-goal/"
+  }
+  </script>
 </head>
 <body>
-  <h1>Savings Goal Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <nav>
+    <a href="https://calculatorchoice.com">Home</a>
+    <a href="/calculators/savings-goal/">This Page</a>
+  </nav>
+
+  <main>
+    <section class="calculator-container">
+      <h1>Savings Goal Calculator</h1>
+      <p>Find out how much you need to save each month to reach your goal.</p>
+
+      <div class="input-group">
+        <label for="goalAmount">Savings Goal ($):</label>
+        <input type="number" id="goalAmount" placeholder="e.g. 10000" />
+      </div>
+      <div class="input-group">
+        <label for="monthlyRate">Annual Interest Rate (%):</label>
+        <input type="number" id="monthlyRate" placeholder="e.g. 3" />
+      </div>
+      <div class="input-group">
+        <label for="years">Years to Save:</label>
+        <input type="number" id="years" placeholder="e.g. 5" />
+      </div>
+
+      <div id="output" class="result-box">Enter your goal details to calculate.</div>
+    </section>
+
+    <section class="info-section">
+      <h2>How to Reach Your Savings Goal</h2>
+      <p>
+        Whether you're saving for a home, a car, or a vacation, understanding how much to save each month helps you stay on track. This calculator factors in interest earned on your savings.
+      </p>
+
+      <h3>Formula</h3>
+      <p>
+        PMT = FV × (r / ((1 + r)^nt - 1))<br />
+        <strong>Where:</strong><br />
+        FV = future value (goal amount)<br />
+        r = monthly interest rate<br />
+        t = number of years<br />
+        n = 12 (monthly contributions)
+      </p>
+
+      <h3>Example</h3>
+      <p>
+        To save $10,000 in 5 years at a 3% annual interest rate, you need to save approximately $152.15 per month.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Explore more: <a href="/calculators/simple-interest/">Simple Interest Calculator</a> | <a href="/calculators/retirement-savings/">Retirement Savings Calculator</a></p>
+  </footer>
 </body>
 </html>
