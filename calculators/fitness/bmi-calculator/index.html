@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bmi Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMI Calculator – Body Mass Index Checker</title>
+  <meta name="description" content="Use our free BMI Calculator to check your Body Mass Index. Find out if you're underweight, normal, overweight, or obese with accurate metrics.">
+  <meta property="og:title" content="BMI Calculator – Body Mass Index Checker" />
+  <meta property="og:description" content="Instantly calculate your BMI with our easy tool. Understand your health category based on height and weight." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calculatorchoice.com/calculators/bmi-calculator/" />
+  <meta property="og:image" content="https://calculatorchoice.com/assets/img/bmi-preview.png" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Calculator",
+      "name": "BMI Calculator",
+      "description": "Check your Body Mass Index instantly by entering your height and weight.",
+      "url": "https://calculatorchoice.com/calculators/bmi-calculator/",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All"
+    }
+  </script>
 </head>
 <body>
-  <h1>Bmi Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <nav>
+    <a href="https://calculatorchoice.com">Home</a>
+    <a href="/calculators/bmi-calculator/">This Page</a>
+    <input type="text" id="search" placeholder="Search calculators..." />
+    <ul id="suggestions"></ul>
+  </nav>
+
+  <header class="hero">
+    <h1>BMI Calculator</h1>
+    <h2>Find your Body Mass Index and determine your health category</h2>
+  </header>
+
+  <main>
+    <section class="calculator-card">
+      <label for="height">Height (cm)</label>
+      <input type="number" id="height" placeholder="e.g. 170" />
+
+      <label for="weight">Weight (kg)</label>
+      <input type="number" id="weight" placeholder="e.g. 65" />
+
+      <button onclick="calculateBMI()">Calculate BMI</button>
+
+      <div id="result"></div>
+    </section>
+
+    <section class="educational">
+      <h3>What is BMI?</h3>
+      <p>Body Mass Index (BMI) is a measure of body fat based on your weight in relation to your height. It helps you understand if you're underweight, within a healthy weight range, overweight, or obese. Our BMI calculator gives you instant results based on the standard BMI formula used worldwide.</p>
+      <p>Results:</p>
+      <ul>
+        <li>Underweight: BMI less than 18.5</li>
+        <li>Normal weight: BMI 18.5 – 24.9</li>
+        <li>Overweight: BMI 25 – 29.9</li>
+        <li>Obese: BMI 30 or greater</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="/calculators/bmr-calculator/">BMR Calculator</a>
+    <a href="/calculators/ideal-weight-calculator/">Ideal Weight Calculator</a>
+  </footer>
+
+  <script src="calculator.js"></script>
 </body>
 </html>
