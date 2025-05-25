@@ -3,11 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nap Schedule Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="baby nap schedule, nap calculator, baby sleep schedule by age">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Nap Schedule Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Baby Nap Schedule Calculator</h2>
+      <form id="napForm">
+        <label for="age">Baby's Age (months):</label>
+        <input type="number" id="age" min="0" max="36" required>
+
+        <label for="wakeTime">Wake Time (optional):</label>
+        <input type="time" id="wakeTime">
+
+        <button type="submit">Generate Schedule</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Nap Schedules Are Determined</h3>
+      <p>Recommended nap numbers and durations vary by age. Young infants nap frequently, while older babies consolidate naps and increase wake windows.</p>
+
+      <h4>Typical Nap Patterns:</h4>
+      <ul>
+        <li>0–3 months: 4–5 naps/day (~14–17 hrs total sleep)</li>
+        <li>4–6 months: 3–4 naps/day</li>
+        <li>7–9 months: 2–3 naps/day</li>
+        <li>10–18 months: 2 naps/day</li>
+        <li>18–36 months: 1 nap/day</li>
+      </ul>
+
+      <h4>Disclaimer:</h4>
+      <p>This tool offers general guidance. Every child is different. Consult your pediatrician or a sleep consultant for personalized advice.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/baby/baby-feed-calculator/">Baby Feed Calculator</a></li>
+        <li><a href="/calculators/health/child-bmi-calculator/">Child BMI Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
