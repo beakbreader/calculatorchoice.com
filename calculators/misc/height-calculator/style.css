@@ -1,10 +1,80 @@
 body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4, #a18cd1);
+  background-color: #f9f9f9;
   color: #333;
+  line-height: 1.6;
+  padding: 0 1rem;
 }
-...
-footer ul li a:hover {
-  text-decoration: underline;
+
+main {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.calculator input,
+.calculator select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+button#calculateBtn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background: #6c5ce7;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button#calculateBtn:hover {
+  background: #574b90;
+}
+
+#result {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #222;
+}
+
+footer {
+  text-align: center;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+  background: #f0f0f0;
+  border-top: 1px solid #ddd;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  margin: 0.5rem 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #6c5ce7;
 }
