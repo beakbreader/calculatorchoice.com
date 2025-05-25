@@ -11,25 +11,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const unit = document.getElementById('unit').value;
 
     if (isNaN(father) || isNaN(mother) || !gender || !unit) {
-      result.textContent = "Please fill in all fields correctly.";
+      result.textContent = 'Please fill in all fields correctly.';
       return;
     }
 
-    let prediction;
+    let fatherInInches = father;
+    let motherInInches = mother;
+    if (unit === 'cm') {
+      fatherInInches = father / 2.54;
+      motherInInches = mother / 2.54;
+    }
 
+    let height;
     if (gender === 'male') {
-      prediction = (father + mother + 5) / 2;
+      height = (fatherInInches + motherInInches + 5) / 2;
     } else {
-      prediction = (father + mother - 5) / 2;
+      height = (fatherInInches + motherInInches - 5) / 2;
     }
 
     if (unit === 'cm') {
-      prediction *= 2.54;
+      height *= 2.54;
     }
 
-    prediction = prediction.toFixed(1);
-    const label = unit === 'cm' ? 'cm' : 'inches';
-
-    result.textContent = `Your predicted adult height is approximately ${prediction} ${label}.`;
+    result.textContent = `Your predicted adult height is approximately ${height.toFixed(1)} ${unit === 'cm' ? 'cm' : 'inches'}.`;
   });
 });

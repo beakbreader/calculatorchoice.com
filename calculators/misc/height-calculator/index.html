@@ -5,44 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><TITLE HERE></title>
   <meta name="description" content="<META DESCRIPTION HERE>" />
-  <meta name="keywords" content="height calculator, calculate your height from parents, child height predictor, adult height estimator" />
+  <meta name="keywords" content="height calculator from parents, adult height predictor, calculate height using genetics" />
   <link rel="stylesheet" href="style.css" />
   <script defer src="calculator.js"></script>
-  <meta property="og:title" content="<TITLE HERE>" />
-  <meta property="og:description" content="<META DESCRIPTION HERE>" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="<URL HERE>" />
-  <meta property="og:image" content="<IMAGE URL HERE>" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Calculator",
-      "name": "Height Calculator from Parents",
-      "description": "Estimate your adult height based on your parents' heights.",
-      "keywords": "height calculator, parental height predictor, calculate height from parents",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Calculator Choice"
-      }
-    }
-  </script>
 </head>
 <body>
-  <header class="sticky-header">
-    <nav>
-      <a href="/">Home</a>
-      <a href="/calculators">All Calculators</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
     <section class="card">
-      <h1>Height Calculator from Parents</h1>
+      <h2>Height Calculator from Parents</h2>
       <form id="heightForm">
         <label for="unit">Select Unit:</label>
-        <select id="unit" required>
+        <select id="unit">
           <option value="in">Inches</option>
           <option value="cm">Centimeters</option>
         </select>
@@ -60,36 +44,35 @@
           <option value="female">Female</option>
         </select>
 
-        <button type="submit">Calculate Your Height</button>
+        <button type="submit">Calculate</button>
       </form>
 
-      <div id="result" class="result" aria-live="polite"></div>
+      <div id="result" class="result"></div>
     </section>
 
-    <section class="explanation">
-      <h2>How This Height Calculator Works</h2>
-      <p>This tool estimates your adult height based on your parents' heights and gender, using the mid-parental height formula.</p>
-      <h3>Formulas:</h3>
+    <section class="card explanation">
+      <h3>Understanding Height Prediction</h3>
+      <p>This tool estimates your adult height using the mid-parental height method. It's a simple formula based on your parents' heights and your gender.</p>
+
+      <h4>Formula:</h4>
       <ul>
-        <li>For males: <code>((father + mother + 5 inches) / 2)</code></li>
-        <li>For females: <code>((father + mother - 5 inches) / 2)</code></li>
+        <li>For Males: ((Father + Mother + 5 inches) / 2)</li>
+        <li>For Females: ((Father + Mother - 5 inches) / 2)</li>
       </ul>
 
-      <h3>Glossary:</h3>
-      <dl>
-        <dt>Mid-Parental Height</dt>
-        <dd>The average of the parents' heights, adjusted by 5 inches for gender.</dd>
-      </dl>
+      <p>Note: If you choose centimeters, the result is automatically converted for you.</p>
 
-      <h3>Disclaimer</h3>
-      <p>This is only an estimate and should not be used as a medical guideline.</p>
+      <h4>Disclaimer:</h4>
+      <p>This is an estimate. Actual height is influenced by genetics, nutrition, and environment.</p>
+    </section>
 
-      <h3>Related Calculators</h3>
+    <footer class="card related">
+      <h4>Related Calculators</h4>
       <ul>
         <li><a href="/calculators/fitness/bmi-calculator/">BMI Calculator</a></li>
         <li><a href="/calculators/fitness/body-fat-calculator/">Body Fat Calculator</a></li>
       </ul>
-    </section>
+    </footer>
   </main>
 </body>
 </html>
