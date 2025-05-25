@@ -1,86 +1,102 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #ffb6c1, #87cefa);
   color: #333;
 }
 
 header {
-  background: #fff;
-  padding: 2rem 1rem 1rem;
   text-align: center;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 2rem 1rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 
 .home-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 8px;
   text-decoration: none;
-  color: #007BFF;
-  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
 }
 
-h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-h2 {
-  margin: 0.5rem 0 0;
-  font-size: 1rem;
-  color: #666;
+.home-button:hover {
+  background: #f0f0f0;
 }
 
 main {
   display: flex;
-  justify-content: center;
-  padding: 2rem 1rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
-.calculator-container {
-  background: #fff;
+.calculator-card {
+  background: white;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   max-width: 400px;
   width: 100%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.5s ease;
 }
 
-.calculator-container label {
-  display: block;
-  margin-top: 1rem;
+.calculator-card label {
   font-weight: bold;
 }
 
-.calculator-container input,
-.calculator-container select {
-  width: 100%;
+.calculator-card input {
   padding: 0.5rem;
-  margin-top: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
-.result {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-  font-weight: bold;
+.content {
+  max-width: 600px;
+  text-align: left;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
 }
 
 footer {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
   text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  border-top: 1px solid #eee;
-  background: #fafafa;
 }
 
-footer nav a {
-  margin: 0 1rem;
+footer a {
   color: #007BFF;
   text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
