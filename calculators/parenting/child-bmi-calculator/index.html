@@ -3,11 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Child Bmi Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="child bmi calculator, bmi percentile child, bmi for kids calculator">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Child Bmi Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Child BMI Calculator</h2>
+      <form id="bmiForm">
+        <label for="age">Age (2-19 years):</label>
+        <input type="number" id="age" min="2" max="19" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" required>
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" required>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" required>
+
+        <button type="submit">Calculate</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Child BMI is Calculated</h3>
+      <p>Child BMI is calculated using the same formula as adults, but is interpreted using percentiles based on age and gender.</p>
+
+      <h4>Formula:</h4>
+      <p><code>BMI = weight (kg) / [height (m)]^2</code></p>
+
+      <h4>Categories (CDC):</h4>
+      <ul>
+        <li>Underweight: &lt; 5th percentile</li>
+        <li>Healthy weight: 5th to &lt; 85th percentile</li>
+        <li>Overweight: 85th to &lt; 95th percentile</li>
+        <li>Obese: ≥ 95th percentile</li>
+      </ul>
+
+      <h4>Disclaimer:</h4>
+      <p>This calculator provides an estimate. For accurate health assessment, consult a pediatrician who can consider growth charts and health history.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/fitness/bmi-calculator/">Adult BMI Calculator</a></li>
+        <li><a href="/calculators/fitness/body-fat-calculator/">Body Fat Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
