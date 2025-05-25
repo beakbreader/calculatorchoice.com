@@ -3,11 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grade Percentage Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="grade percentage calculator, calculate grade, score to percentage">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Grade Percentage Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Grade Percentage Calculator</h2>
+      <form id="gradeForm">
+        <label for="earned">Points Earned:</label>
+        <input type="number" id="earned" required>
+
+        <label for="total">Total Points:</label>
+        <input type="number" id="total" required>
+
+        <button type="submit">Calculate</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Grade Percentage is Calculated</h3>
+      <p>The grade percentage is a measure of your performance, calculated by dividing the points you earned by the total possible points and multiplying by 100.</p>
+
+      <h4>Formula:</h4>
+      <p><code>Percentage = (Points Earned / Total Points) * 100</code></p>
+
+      <h4>Example:</h4>
+      <p>If you earned 18 out of 20 points:<br><code>(18 / 20) * 100 = 90%</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>This calculator gives a basic percentage. Your final grade may depend on weighted averages or grading scales used by your instructor.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/education/final-grade-calculator/">Final Grade Calculator</a></li>
+        <li><a href="/calculators/education/gpa-calculator/">GPA Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
