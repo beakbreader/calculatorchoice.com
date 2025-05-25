@@ -1,32 +1,23 @@
-// Height Calculator Logic
-
-const unitSelector = document.getElementById('unit');
-const heightInput = document.getElementById('heightInput');
-const resultDiv = document.getElementById('result');
-
 function convertHeight() {
-  const unit = unitSelector.value;
-  const value = parseFloat(heightInput.value);
+  const height = parseFloat(document.getElementById("height").value);
+  const unit = document.getElementById("unit").value;
+  const output = document.getElementById("result-output");
 
-  if (isNaN(value) || value < 0) {
-    resultDiv.textContent = 'Please enter a valid positive number';
+  if (isNaN(height) || height <= 0) {
+    output.innerText = "Please enter a valid height.";
     return;
   }
 
-  let converted, unitLabel;
-
-  if (unit === 'inches') {
-    converted = (value * 2.54).toFixed(2);
-    unitLabel = 'centimeters';
+  if (unit === "cm") {
+    const totalInches = height / 2.54;
+    const feet = Math.floor(totalInches / 12);
+    const inches = (totalInches % 12).toFixed(2);
+    output.innerText = `${height} cm = ${feet} ft ${inches} in`;
   } else {
-    converted = (value / 2.54).toFixed(2);
-    unitLabel = 'inches';
+    const feet = Math.floor(height);
+    const inches = (height - feet) * 100;
+    const totalInches = (feet * 12) + (inches / 100 * 12);
+    const centimeters = (totalInches * 2.54).toFixed(2);
+    output.innerText = `${feet} ft ${inches.toFixed(0)} in = ${centimeters} cm`;
   }
-
-  resultDiv.textContent = `${converted} ${unitLabel}`;
 }
-
-unitSelector.addEventListener('change', convertHeight);
-heightInput.addEventListener('input', convertHeight);
-
-document.addEventListener('DOMContentLoaded', convertHeight);

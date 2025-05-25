@@ -3,66 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Height Calculator - Convert Inches to Centimeters and Vice Versa</title>
-  <meta name="description" content="Use this Height Calculator to convert between inches and centimeters instantly. Perfect for measuring your height accurately in your preferred unit." />
-  <meta property="og:title" content="Height Calculator - Convert Inches & Centimeters" />
-  <meta property="og:description" content="Accurately convert your height between inches and centimeters with our sleek, responsive Height Calculator." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://calculatorchoice.com/calculators/height-calculator/" />
-  <meta property="og:image" content="https://calculatorchoice.com/assets/height-calculator-og.png" />
-  <link rel="stylesheet" href="style.css" />
+  <title>[SEO_TITLE]</title>
+  <meta name="description" content="[SEO_DESCRIPTION]">
+  <meta property="og:title" content="[OG_TITLE]">
+  <meta property="og:description" content="[OG_DESCRIPTION]">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="[PAGE_URL]">
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Calculator",
-      "name": "Height Calculator",
-      "description": "Instantly convert height between inches and centimeters.",
-      "url": "https://calculatorchoice.com/calculators/height-calculator/"
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "Calculator",
+    "name": "[SCHEMA_NAME]",
+    "description": "[SCHEMA_DESCRIPTION]",
+    "applicationCategory": "WebApplication"
+  }
   </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
+  <div class="calculator-container">
     <h1>Height Calculator</h1>
-    <h2>Convert height between inches and centimeters instantly</h2>
-  </header>
+    <p class="calculator-description">Calculate height in feet/inches or centimeters from the other.</p>
+    <div class="calculator-form">
+      <label for="height">Enter height:</label>
+      <input type="number" id="height" placeholder="Enter value" />
 
-  <main class="calculator-container">
-    <div class="unit-selector">
-      <label for="unit">Select Unit:</label>
       <select id="unit">
-        <option value="inches" selected>Inches</option>
-        <option value="centimeters">Centimeters</option>
+        <option value="cm">Centimeters</option>
+        <option value="ftin">Feet/Inches</option>
       </select>
+
+      <button onclick="convertHeight()">Convert</button>
     </div>
-
-    <div class="input-group">
-      <label for="heightInput">Enter Height:</label>
-      <input type="number" id="heightInput" placeholder="Enter height..." />
-    </div>
-
-    <div class="result" id="result"></div>
-  </main>
-
-  <section class="education">
-    <h3>Understanding Height Conversions</h3>
-    <p>
-      This tool lets you convert height measurements between inches and centimeters. Whether you're tracking personal growth, verifying clothing sizes, or converting measurements from different systems, our height calculator offers quick and reliable results.
-    </p>
-    <p>
-      1 inch equals 2.54 centimeters. Simply select your starting unit, enter your height, and the converted value will appear instantly.
-    </p>
-  </section>
-
-  <footer>
-    <nav>
-      <a href="https://calculatorchoice.com">Home</a>
-      <a href="/calculators/height-calculator/">This Page</a>
-      <a href="/calculators/weight-calculator/">Weight Calculator</a>
-      <a href="/calculators/bmi-calculator/">BMI Calculator</a>
-    </nav>
-  </footer>
-
+    <div id="result-output"></div>
+  </div>
   <script src="calculator.js"></script>
 </body>
 </html>
