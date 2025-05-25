@@ -1,4 +1,5 @@
-body, html {
+/* Global layout */
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -9,73 +10,58 @@ body, html {
   color: #333;
 }
 
+/* Header */
 .site-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  color: white;
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.header-content h1 {
-  font-size: 2.5rem;
-  margin: 0;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem 1rem 1rem;
   text-align: center;
-  flex-grow: 1;
-}
-
-.search-container {
-  max-width: 250px;
-  margin-left: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
 }
 
-#searchBar {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 20px;
-  font-size: 1rem;
-  outline: none;
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-#searchResults {
+#tool-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto;
+}
+
+.home-button {
   position: absolute;
-  top: 100%;
-  left: 0;
   right: 0;
   background: white;
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  z-index: 1000;
+  color: #6c5ce7;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.home-button:hover {
+  background: #f0f0f0;
 }
 
-#searchResults li {
-  padding: 0.75rem 1rem;
-  cursor: pointer;
-  border-bottom: 1px solid #eee;
+#tool-subheading {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: #eee;
 }
 
-#searchResults li:hover {
-  background: #f4f4f4;
-}
-
+/* Main content */
 main {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 3rem 1rem;
 }
 
 .calculator-card {
@@ -85,62 +71,39 @@ main {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   max-width: 600px;
   width: 100%;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-form input, form select {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  margin-top: 0.5rem;
-}
-
-button {
-  margin-top: 1.5rem;
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background-color: #6c5ce7;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-button:hover {
-  background-color: #574b90;
-  box-shadow: 0 0 10px rgba(108, 92, 231, 0.5);
-}
-
-#result {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #222;
-}
-
-footer {
-  background: rgba(0, 0, 0, 0.05);
   text-align: center;
-  padding: 1.5rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+  text-align: center;
   color: #fff;
   font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+
 footer ul {
   list-style: none;
   padding: 0;
   margin: 1rem 0;
 }
+
 footer li {
   margin: 0.5rem 0;
 }
+
 footer a {
   color: #fff;
   text-decoration: underline;
