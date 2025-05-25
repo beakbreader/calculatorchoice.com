@@ -3,11 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Time Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="study time calculator, weekly study hours, college study planner">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Study Time Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Study Time Calculator</h2>
+      <form id="studyForm">
+        <label for="courses">Number of Courses:</label>
+        <input type="number" id="courses" min="1" max="10" required>
+
+        <label for="intensity">Study Intensity:</label>
+        <select id="intensity" required>
+          <option value="1.5">Light</option>
+          <option value="2">Moderate</option>
+          <option value="3">Intense</option>
+        </select>
+
+        <div id="creditInputs"></div>
+
+        <button type="button" id="generateInputs">Set Credit Hours</button>
+        <button type="submit">Calculate Study Time</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Study Time is Calculated</h3>
+      <p>Based on the number of credit hours and study intensity, this calculator estimates how many hours per week you should dedicate to each course.</p>
+
+      <h4>Formula:</h4>
+      <p><code>Total Hours = Σ (credit hours × intensity multiplier)</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>This is a general guide. Actual study needs may vary depending on course difficulty, personal learning speed, and goals.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/education/gpa-calculator/">GPA Calculator</a></li>
+        <li><a href="/calculators/education/final-grade-calculator/">Final Grade Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
