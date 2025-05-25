@@ -1,53 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GPA Calculator - Calculate Your Grade Point Average</title>
-  <meta name="description" content="Easily calculate your GPA with our free GPA Calculator. Add courses, set credits and grades, and get your weighted average instantly." />
-  <meta property="og:title" content="GPA Calculator - Calculator Choice" />
-  <meta property="og:description" content="Calculate your GPA fast and accurately with our easy-to-use GPA Calculator." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://calculatorchoice.com/calculators/gpa-calculator/" />
-  <meta property="og:image" content="https://calculatorchoice.com/images/gpa-calculator-preview.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "GPA Calculator",
-    "url": "https://calculatorchoice.com/calculators/gpa-calculator/",
-    "applicationCategory": "EducationApplication",
-    "operatingSystem": "All",
-    "description": "Free GPA calculator that helps you compute your grade point average based on credits and grades."
-  }
-  </script>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="gpa calculator, college gpa calculator, high school gpa, grade point average calculator">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
   <header>
-    <h1>GPA Calculator</h1>
-    <h2>Calculate your Grade Point Average with ease</h2>
-    <input type="text" id="search" placeholder="Search calculators...">
-    <ul id="suggestions"></ul>
-  </header>
-  <main>
-    <div class="card">
-      <div id="courses"></div>
-      <button id="add-course">Add Course</button>
-      <div class="result">
-        <strong>GPA:</strong> <span id="gpa-result">0.00</span>
-      </div>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>GPA Calculator</h2>
+      <form id="gpaForm">
+        <div id="courses">
+          <div class="course-row">
+            <label>Grade:
+              <select class="grade">
+                <option value="4.0">A</option>
+                <option value="3.7">A-</option>
+                <option value="3.3">B+</option>
+                <option value="3.0">B</option>
+                <option value="2.7">B-</option>
+                <option value="2.3">C+</option>
+                <option value="2.0">C</option>
+                <option value="1.7">C-</option>
+                <option value="1.0">D</option>
+                <option value="0.0">F</option>
+              </select>
+            </label>
+            <label>Credits:
+              <input type="number" class="credits" min="0.5" step="0.1" required>
+            </label>
+            <button type="button" class="remove">Remove</button>
+          </div>
+        </div>
+
+        <button type="button" id="addCourse">Add Course</button>
+        <button type="submit">Calculate GPA</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How GPA is Calculated</h3>
+      <p>Your GPA (Grade Point Average) is calculated by dividing the total grade points earned by the total credits taken.</p>
+
+      <h4>Formula:</h4>
+      <p><code>GPA = (Sum of (Grade Points × Course Credits)) / Total Credits</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>This GPA calculator is based on the 4.0 grading scale. Different schools may use different scales or weighting systems.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/education/grade-percentage-calculator/">Grade Percentage Calculator</a></li>
+        <li><a href="/calculators/education/final-grade-calculator/">Final Grade Calculator</a></li>
+      </ul>
+    </footer>
   </main>
-  <footer>
-    <p>Explore more:</p>
-    <ul>
-      <li><a href="/calculators/bmi-calculator/">BMI Calculator</a></li>
-      <li><a href="/calculators/weight-converter/">Weight Converter</a></li>
-      <li><a href="/calculators/length-converter/">Length Converter</a></li>
-    </ul>
-    <p>&copy; 2025 Calculator Choice</p>
-  </footer>
-  <script src="calculator.js"></script>
 </body>
 </html>
