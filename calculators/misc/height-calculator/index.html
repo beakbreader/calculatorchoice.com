@@ -2,48 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Easily estimate your adult height based on your parents' heights using our accurate Height Calculator." />
-  <title>Height Calculator - Estimate Adult Height</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculate your estimated height based on gender and parent's height with our quick and accurate height predictor." />
+  <title>Height Calculator - Predict Your Future Height</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-wrapper">
-      <h1 id="tool-title">Height Calculator</h1>
-      <a href="https://calculatorchoice.com" class="home-button">Home</a>
-    </div>
-    <h2 id="tool-subheading">Quickly and accurately calculate adult height based on parent heights</h2>
+  <header>
+    <h1>Height Calculator</h1>
+    <h2>Estimate your future height using parents' heights</h2>
+    <a href="/" class="home-button">Home</a>
   </header>
 
   <main>
-    <div class="calculator-card">
-      <form id="heightForm">
-        <label for="gender">Gender:</label><br>
-        <select id="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select><br><br>
+    <div class="calculator-container">
+      <label for="gender">Gender:</label>
+      <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
 
-        <label for="fatherHeight">Father's Height (inches):</label><br>
-        <input type="number" id="fatherHeight" min="20" max="100" step="0.1"><br><br>
+      <label for="father-height">Father's Height (cm):</label>
+      <input type="number" id="father-height" placeholder="e.g., 180" />
 
-        <label for="motherHeight">Mother's Height (inches):</label><br>
-        <input type="number" id="motherHeight" min="20" max="100" step="0.1"><br><br>
+      <label for="mother-height">Mother's Height (cm):</label>
+      <input type="number" id="mother-height" placeholder="e.g., 165" />
 
-        <p><strong>Estimated Adult Height:</strong> <span id="result">—</span></p>
-      </form>
+      <div class="result">
+        Estimated Height: <span id="result">–</span> cm
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>Explore more health calculators:</p>
-    <ul>
-      <li><a href="/calculators/bmi-calculator/">BMI Calculator</a></li>
-      <li><a href="/calculators/body-fat-calculator/">Body Fat Calculator</a></li>
-      <li><a href="/calculators/calorie-calculator/">Calorie Calculator</a></li>
-    </ul>
-    <p>&copy; 2025 Calculator Choice</p>
+    <nav>
+      <a href="/bmi-calculator">BMI Calculator</a>
+      <a href="/ideal-weight">Ideal Weight</a>
+      <a href="/calorie-calculator">Calorie Calculator</a>
+    </nav>
   </footer>
 
   <script src="calculator.js"></script>

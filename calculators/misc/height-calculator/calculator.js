@@ -1,26 +1,29 @@
-function calculateHeight() {
-  const gender = document.getElementById("gender").value;
-  const fatherHeight = parseFloat(document.getElementById("fatherHeight").value);
-  const motherHeight = parseFloat(document.getElementById("motherHeight").value);
+const genderInput = document.getElementById("gender");
+const fatherInput = document.getElementById("father-height");
+const motherInput = document.getElementById("mother-height");
+const resultOutput = document.getElementById("result");
 
-  if (isNaN(fatherHeight) || isNaN(motherHeight)) {
-    document.getElementById("result").textContent = "—";
+function calculateHeight() {
+  const gender = genderInput.value;
+  const father = parseFloat(fatherInput.value);
+  const mother = parseFloat(motherInput.value);
+
+  if (isNaN(father) || isNaN(mother)) {
+    resultOutput.textContent = "–";
     return;
   }
 
   let estimatedHeight;
+
   if (gender === "male") {
-    estimatedHeight = (fatherHeight + motherHeight * 1.08) / 2;
+    estimatedHeight = (mother * 13 / 12 + father) / 2;
   } else {
-    estimatedHeight = (fatherHeight * 0.923 + motherHeight) / 2;
+    estimatedHeight = (father * 12 / 13 + mother) / 2;
   }
 
-  const feet = Math.floor(estimatedHeight / 12);
-  const inches = Math.round(estimatedHeight % 12);
-
-  document.getElementById("result").textContent = `${feet} ft ${inches} in (${estimatedHeight.toFixed(1)} in)`;
+  resultOutput.textContent = estimatedHeight.toFixed(1);
 }
 
-document.querySelectorAll("input, select").forEach(el => {
-  el.addEventListener("input", calculateHeight);
-});
+genderInput.addEventListener("change", calculateHeight);
+fatherInput.addEventListener("input", calculateHeight);
+motherInput.addEventListener("input", calculateHeight);
