@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[SEO_TITLE]</title>
-  <meta name="description" content="[SEO_DESCRIPTION]">
-  <meta property="og:title" content="[OG_TITLE]">
-  <meta property="og:description" content="[OG_DESCRIPTION]">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Height Converter Calculator</title>
+  <meta name="description" content="Convert height between feet/inches and centimeters instantly with this free online height converter calculator.">
+  <meta property="og:title" content="Height Converter Calculator">
+  <meta property="og:description" content="Easily convert your height between feet/inches and centimeters using our intuitive height converter tool.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="[PAGE_URL]">
+  <meta property="og:url" content="https://calculatorchoice.com/height-converter">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Calculator",
-    "name": "[SCHEMA_NAME]",
-    "description": "[SCHEMA_DESCRIPTION]",
+    "name": "Height Converter Calculator",
+    "description": "Convert height between feet/inches and centimeters with this easy-to-use online tool.",
     "applicationCategory": "WebApplication"
   }
   </script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="calculator.js" defer></script>
 </head>
 <body>
-  <div class="calculator-container">
-    <h1>Height Calculator</h1>
-    <p class="calculator-description">Calculate height in feet/inches or centimeters from the other.</p>
-    <div class="calculator-form">
-      <label for="height">Enter height:</label>
-      <input type="number" id="height" placeholder="Enter value" />
+  <div class="calculator-wrapper">
+    <h1>Height Converter Calculator</h1>
+    <p class="calculator-description">Easily convert height between feet/inches and centimeters.</p>
 
-      <select id="unit">
-        <option value="cm">Centimeters</option>
-        <option value="ftin">Feet/Inches</option>
-      </select>
+    <form id="calculator-form">
+      <label for="feet">Feet:</label>
+      <input type="number" id="feet" min="0" placeholder="e.g. 5">
 
-      <button onclick="convertHeight()">Convert</button>
-    </div>
+      <label for="inches">Inches:</label>
+      <input type="number" id="inches" min="0" placeholder="e.g. 8">
+
+      <label for="centimeters">Centimeters:</label>
+      <input type="number" id="centimeters" min="0" placeholder="e.g. 172.72">
+
+      <button type="button" id="convertToCm">Convert to cm</button>
+      <button type="button" id="convertToFtIn">Convert to ft/in</button>
+    </form>
+
     <div id="result-output"></div>
   </div>
-  <script src="calculator.js"></script>
 </body>
 </html>

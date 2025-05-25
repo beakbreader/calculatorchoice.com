@@ -1,23 +1,22 @@
-function convertHeight() {
-  const height = parseFloat(document.getElementById("height").value);
-  const unit = document.getElementById("unit").value;
-  const output = document.getElementById("result-output");
+document.getElementById("convertToCm").addEventListener("click", () => {
+  const feet = parseFloat(document.getElementById("feet").value) || 0;
+  const inches = parseFloat(document.getElementById("inches").value) || 0;
+  const totalInches = (feet * 12) + inches;
+  const centimeters = (totalInches * 2.54).toFixed(2);
+  document.getElementById("centimeters").value = centimeters;
+  document.getElementById("result-output").textContent = `${feet} ft ${inches} in = ${centimeters} cm`;
+});
 
-  if (isNaN(height) || height <= 0) {
-    output.innerText = "Please enter a valid height.";
+document.getElementById("convertToFtIn").addEventListener("click", () => {
+  const cm = parseFloat(document.getElementById("centimeters").value);
+  if (isNaN(cm) || cm < 0) {
+    document.getElementById("result-output").textContent = "Please enter a valid number of centimeters.";
     return;
   }
-
-  if (unit === "cm") {
-    const totalInches = height / 2.54;
-    const feet = Math.floor(totalInches / 12);
-    const inches = (totalInches % 12).toFixed(2);
-    output.innerText = `${height} cm = ${feet} ft ${inches} in`;
-  } else {
-    const feet = Math.floor(height);
-    const inches = (height - feet) * 100;
-    const totalInches = (feet * 12) + (inches / 100 * 12);
-    const centimeters = (totalInches * 2.54).toFixed(2);
-    output.innerText = `${feet} ft ${inches.toFixed(0)} in = ${centimeters} cm`;
-  }
-}
+  const totalInches = cm / 2.54;
+  const feet = Math.floor(totalInches / 12);
+  const inches = (totalInches % 12).toFixed(2);
+  document.getElementById("feet").value = feet;
+  document.getElementById("inches").value = inches;
+  document.getElementById("result-output").textContent = `${cm} cm = ${feet} ft ${inches} in`;
+});
