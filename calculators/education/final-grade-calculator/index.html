@@ -3,11 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Grade Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="final grade calculator, what do I need on my final, final exam calculator">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Final Grade Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Final Grade Calculator</h2>
+      <form id="finalForm">
+        <label for="current">Current Grade (%):</label>
+        <input type="number" id="current" min="0" max="100" required>
+
+        <label for="weight">Final Exam Weight (%):</label>
+        <input type="number" id="weight" min="0" max="100" required>
+
+        <label for="desired">Desired Course Grade (%):</label>
+        <input type="number" id="desired" min="0" max="100" required>
+
+        <button type="submit">Calculate Needed Final Grade</button>
+      </form>
+
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Final Exam Grade is Calculated</h3>
+      <p>This tool uses the weighted average formula to calculate what grade you need on your final exam to reach your desired course grade.</p>
+
+      <h4>Formula:</h4>
+      <p><code>Final Exam Score = (Desired Grade - (1 - Final Weight) × Current Grade) / Final Weight</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>This calculator uses standard percentage math. Your institution may round differently or include other graded components.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/education/gpa-calculator/">GPA Calculator</a></li>
+        <li><a href="/calculators/education/grade-percentage-calculator/">Grade Percentage Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
