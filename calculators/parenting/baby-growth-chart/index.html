@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><TITLE HERE></title>
-  <meta name="description" content="<META DESCRIPTION HERE>" />
-  <meta name="keywords" content="height calculator from parents, adult height predictor, calculate height using genetics" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <meta name="keywords" content="baby growth chart calculator, percentile calculator baby, infant weight percentile, baby height percentile">
+  <link rel="stylesheet" href="style.css">
   <script defer src="calculator.js"></script>
 </head>
 <body>
@@ -23,54 +23,59 @@
 
   <main class="container">
     <section class="card">
-      <h2>Height Calculator from Parents</h2>
-      <form id="heightForm">
-        <label for="unit">Select Unit:</label>
-        <select id="unit">
-          <option value="in">Inches</option>
-          <option value="cm">Centimeters</option>
-        </select>
+      <h2>Baby Growth Chart Calculator</h2>
+      <form id="growthForm">
+        <label for="age">Age (months):</label>
+        <input type="number" id="age" min="0" max="36" required>
 
-        <label for="fatherHeight">Father's Height:</label>
-        <input type="number" id="fatherHeight" required />
-
-        <label for="motherHeight">Mother's Height:</label>
-        <input type="number" id="motherHeight" required />
-
-        <label for="gender">Your Gender:</label>
+        <label for="gender">Gender:</label>
         <select id="gender" required>
           <option value="">Select</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
 
-        <button type="submit">Calculate</button>
+        <label for="unit">Unit:</label>
+        <select id="unit" required>
+          <option value="metric">cm / kg</option>
+          <option value="imperial">in / lb</option>
+        </select>
+
+        <label for="weight">Weight:</label>
+        <input type="number" id="weight" required>
+
+        <label for="height">Height/Length:</label>
+        <input type="number" id="height" required>
+
+        <label for="head">Head Circumference (optional):</label>
+        <input type="number" id="head">
+
+        <button type="submit">Estimate Percentiles</button>
       </form>
 
       <div id="result" class="result"></div>
     </section>
 
     <section class="card explanation">
-      <h3>Understanding Height Prediction</h3>
-      <p>This tool estimates your adult height using the mid-parental height method. It's a simple formula based on your parents' heights and your gender.</p>
+      <h3>Understanding Baby Growth Charts</h3>
+      <p>This calculator estimates where your baby's measurements might fall compared to WHO growth charts.</p>
 
-      <h4>Formula:</h4>
+      <h4>How It Works:</h4>
       <ul>
-        <li>For Males: ((Father + Mother + 5 inches) / 2)</li>
-        <li>For Females: ((Father + Mother - 5 inches) / 2)</li>
+        <li>Calculates rough percentiles for weight, length, and head size</li>
+        <li>Uses gender-specific age bands and median-based logic</li>
       </ul>
 
-      <p>Note: If you choose centimeters, the result is automatically converted for you.</p>
-
       <h4>Disclaimer:</h4>
-      <p>This is an estimate. Actual height is influenced by genetics, nutrition, and environment.</p>
+      <p>This is not a clinical tool. For precise percentile rankings and guidance, consult a pediatrician or use official WHO/CDC charts.</p>
     </section>
 
     <footer class="card related">
       <h4>Related Calculators</h4>
       <ul>
-        <li><a href="/calculators/fitness/bmi-calculator/">BMI Calculator</a></li>
-        <li><a href="/calculators/fitness/body-fat-calculator/">Body Fat Calculator</a></li>
+        <li><a href="/calculators/health/child-bmi-calculator/">Child BMI Calculator</a></li>
+        <li><a href="/calculators/baby/baby-feed-calculator/">Baby Feed Calculator</a></li>
+        <li><a href="/calculators/baby/nap-schedule-calculator/">Nap Schedule Calculator</a></li>
       </ul>
     </footer>
   </main>
