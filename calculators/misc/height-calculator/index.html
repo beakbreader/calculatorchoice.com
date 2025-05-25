@@ -1,46 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Height Converter Calculator</title>
-  <meta name="description" content="Convert height between feet/inches and centimeters instantly with this free online height converter calculator.">
-  <meta property="og:title" content="Height Converter Calculator">
-  <meta property="og:description" content="Easily convert your height between feet/inches and centimeters using our intuitive height converter tool.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://calculatorchoice.com/height-converter">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Predict your child's adult height using our smart calculator based on parental height and gender." />
+  <title>Child Height Predictor Calculator | Estimate Adult Height</title>
+  <meta property="og:title" content="Child Height Predictor Calculator" />
+  <meta property="og:description" content="Accurately estimate your child's adult height using proven formulas. Enter parent heights and child's gender." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calculatorchoice.com/child-height-predictor" />
+  <meta property="og:image" content="https://calculatorchoice.com/assets/height-predictor-og.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Calculator",
-    "name": "Height Converter Calculator",
-    "description": "Convert height between feet/inches and centimeters with this easy-to-use online tool.",
-    "applicationCategory": "WebApplication"
+    "name": "Child Height Predictor Calculator",
+    "description": "Estimate the adult height of your child based on parental height and gender using this scientifically-based height predictor calculator.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "url": "https://calculatorchoice.com/child-height-predictor"
   }
   </script>
-  <link rel="stylesheet" href="style.css">
-  <script src="calculator.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="calculator-wrapper">
-    <h1>Height Converter Calculator</h1>
-    <p class="calculator-description">Easily convert height between feet/inches and centimeters.</p>
-
-    <form id="calculator-form">
-      <label for="feet">Feet:</label>
-      <input type="number" id="feet" min="0" placeholder="e.g. 5">
-
-      <label for="inches">Inches:</label>
-      <input type="number" id="inches" min="0" placeholder="e.g. 8">
-
-      <label for="centimeters">Centimeters:</label>
-      <input type="number" id="centimeters" min="0" placeholder="e.g. 172.72">
-
-      <button type="button" id="convertToCm">Convert to cm</button>
-      <button type="button" id="convertToFtIn">Convert to ft/in</button>
-    </form>
-
-    <div id="result-output"></div>
-  </div>
+  <main class="calculator-card">
+    <h1>Child Height Predictor Calculator</h1>
+    <div class="calculator-inputs">
+      <label>Father's Height: <input type="number" id="fatherHeight" placeholder="cm or in" /></label>
+      <label>Mother's Height: <input type="number" id="motherHeight" placeholder="cm or in" /></label>
+      <label>Units:
+        <select id="unit">
+          <option value="cm">Centimeters</option>
+          <option value="in">Inches</option>
+        </select>
+      </label>
+      <label>Child's Gender:
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </label>
+    </div>
+    <div class="calculator-result">
+      <h2>Estimated Adult Height: <span id="result">-</span></h2>
+    </div>
+  </main>
+  <section class="content-section">
+    <h2>How the Height Calculator Works</h2>
+    <p>This height predictor uses the mid-parental height formula, widely used by pediatricians to estimate the adult height of children. Adjustments are made based on the child's gender.</p>
+  </section>
+  <footer>
+    <nav>
+      <a href="/bmi-calculator">BMI Calculator</a>
+      <a href="/ideal-weight-calculator">Ideal Weight</a>
+      <a href="/body-fat-calculator">Body Fat</a>
+    </nav>
+  </footer>
+  <script src="calculator.js"></script>
 </body>
 </html>

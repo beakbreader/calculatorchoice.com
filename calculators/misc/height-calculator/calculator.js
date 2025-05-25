@@ -1,22 +1,38 @@
-document.getElementById("convertToCm").addEventListener("click", () => {
-  const feet = parseFloat(document.getElementById("feet").value) || 0;
-  const inches = parseFloat(document.getElementById("inches").value) || 0;
-  const totalInches = (feet * 12) + inches;
-  const centimeters = (totalInches * 2.54).toFixed(2);
-  document.getElementById("centimeters").value = centimeters;
-  document.getElementById("result-output").textContent = `${feet} ft ${inches} in = ${centimeters} cm`;
-});
+document.addEventListener('DOMContentLoaded', () => {
+  const fatherHeight = document.getElementById('fatherHeight');
+  const motherHeight = document.getElementById('motherHeight');
+  const unit = document.getElementById('unit');
+  const gender = document.getElementById('gender');
+  const result = document.getElementById('result');
 
-document.getElementById("convertToFtIn").addEventListener("click", () => {
-  const cm = parseFloat(document.getElementById("centimeters").value);
-  if (isNaN(cm) || cm < 0) {
-    document.getElementById("result-output").textContent = "Please enter a valid number of centimeters.";
-    return;
-  }
-  const totalInches = cm / 2.54;
-  const feet = Math.floor(totalInches / 12);
-  const inches = (totalInches % 12).toFixed(2);
-  document.getElementById("feet").value = feet;
-  document.getElementById("inches").value = inches;
-  document.getElementById("result-output").textContent = `${cm} cm = ${feet} ft ${inches} in`;
+  const calculateHeight = () => {
+    let father = parseFloat(fatherHeight.value);
+    let mother = parseFloat(motherHeight.value);
+    const selectedUnit = unit.value;
+    const selectedGender = gender.value;
+
+    if (isNaN(father) || isNaN(mother)) {
+      result.textContent = '-';
+      return;
+    }
+
+    if (selectedUnit === 'in') {
+      father *= 2.54;
+      mother *= 2.54;
+    }
+
+    let heightCm;
+    if (selectedGender === 'male') {
+      heightCm = (father + mother + 13) / 2;
+    } else {
+      heightCm = (father + mother - 13) / 2;
+    }
+
+    const heightIn = heightCm / 2.54;
+    result.textContent = `${heightCm.toFixed(1)} cm (${heightIn.toFixed(1)} in)`;
+  };
+
+  [fatherHeight, motherHeight, unit, gender].forEach(input => {
+    input.addEventListener('input', calculateHeight);
+  });
 });
