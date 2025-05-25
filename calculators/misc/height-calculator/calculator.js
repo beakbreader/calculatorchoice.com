@@ -1,9 +1,8 @@
 const calculators = [
   { name: "BMI Calculator", slug: "bmi-calculator", category: "health" },
-  { name: "Loan Calculator", slug: "loan-calculator", category: "finance" },
-  { name: "Retirement Calculator", slug: "retirement-calculator", category: "finance" },
   { name: "Height Predictor", slug: "height-predictor", category: "health" },
-  { name: "Savings Calculator", slug: "savings-calculator", category: "finance" },
+  { name: "Ideal Weight Calculator", slug: "ideal-weight-calculator", category: "health" },
+  { name: "Body Fat Calculator", slug: "body-fat-calculator", category: "health" }
 ];
 
 const searchInput = document.getElementById("searchBar");
@@ -14,7 +13,7 @@ searchInput.addEventListener("input", () => {
   resultsList.innerHTML = "";
   if (!query) return;
 
-  const matches = calculators.filter(calc => calc.name.toLowerCase().includes(query));
+  const matches = calculators.filter(c => c.name.toLowerCase().includes(query));
   matches.forEach(calc => {
     const li = document.createElement("li");
     li.textContent = calc.name;
@@ -23,24 +22,20 @@ searchInput.addEventListener("input", () => {
   });
 });
 
-document.getElementById("calculateBtn").addEventListener("click", () => {
+document.getElementById("heightForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const father = parseFloat(document.getElementById("fatherHeight").value);
+  const mother = parseFloat(document.getElementById("motherHeight").value);
   const gender = document.getElementById("gender").value;
-  const motherHeight = parseFloat(document.getElementById("motherHeight").value);
-  const fatherHeight = parseFloat(document.getElementById("fatherHeight").value);
 
-  if (isNaN(motherHeight) || isNaN(fatherHeight)) {
-    document.getElementById("result").textContent = "Please enter valid heights.";
-    return;
-  }
-
-  let estimatedHeight;
-  if (gender === "boy") {
-    estimatedHeight = ((motherHeight * 13 / 12) + fatherHeight) / 2;
+  let predictedHeight;
+  if (gender === "male") {
+    predictedHeight = (father + mother + 13) / 2;
   } else {
-    estimatedHeight = ((fatherHeight * 12 / 13) + motherHeight) / 2;
+    predictedHeight = (father + mother - 13) / 2;
   }
 
-  const feet = Math.floor(estimatedHeight / 12);
-  const inches = Math.round(estimatedHeight % 12);
-  document.getElementById("result").textContent = `Estimated Adult Height: ${feet}' ${inches}"`;
+  document.getElementById("result").innerText =
+    `Estimated adult height: ${predictedHeight.toFixed(1)} cm`;
 });
