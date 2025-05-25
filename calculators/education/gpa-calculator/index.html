@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gpa Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPA Calculator - Calculate Your Grade Point Average</title>
+  <meta name="description" content="Easily calculate your GPA with our free GPA Calculator. Add courses, set credits and grades, and get your weighted average instantly." />
+  <meta property="og:title" content="GPA Calculator - Calculator Choice" />
+  <meta property="og:description" content="Calculate your GPA fast and accurately with our easy-to-use GPA Calculator." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calculatorchoice.com/calculators/gpa-calculator/" />
+  <meta property="og:image" content="https://calculatorchoice.com/images/gpa-calculator-preview.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "GPA Calculator",
+    "url": "https://calculatorchoice.com/calculators/gpa-calculator/",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "All",
+    "description": "Free GPA calculator that helps you compute your grade point average based on credits and grades."
+  }
+  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Gpa Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <h1>GPA Calculator</h1>
+    <h2>Calculate your Grade Point Average with ease</h2>
+    <input type="text" id="search" placeholder="Search calculators...">
+    <ul id="suggestions"></ul>
+  </header>
+  <main>
+    <div class="card">
+      <div id="courses"></div>
+      <button id="add-course">Add Course</button>
+      <div class="result">
+        <strong>GPA:</strong> <span id="gpa-result">0.00</span>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Explore more:</p>
+    <ul>
+      <li><a href="/calculators/bmi-calculator/">BMI Calculator</a></li>
+      <li><a href="/calculators/weight-converter/">Weight Converter</a></li>
+      <li><a href="/calculators/length-converter/">Length Converter</a></li>
+    </ul>
+    <p>&copy; 2025 Calculator Choice</p>
+  </footer>
+  <script src="calculator.js"></script>
 </body>
 </html>
