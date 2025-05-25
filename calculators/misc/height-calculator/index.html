@@ -3,43 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Calculate your estimated height based on gender and parent's height with our quick and accurate height predictor." />
-  <title>Height Calculator - Predict Your Future Height</title>
+  <title>Height Calculator – Convert Feet to Inches, CM & More</title>
+  <meta name="description" content="Use our free height calculator to convert height between feet, inches, centimeters, and meters instantly. Ideal for growth tracking and height conversion.">
+  <meta property="og:title" content="Height Calculator – Convert Feet, Inches, CM & More">
+  <meta property="og:description" content="Convert height measurements quickly and accurately using our simple height calculator. Feet, inches, cm, and meters supported.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calculatorchoice.com/height-calculator">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Calculator",
+    "name": "Height Calculator",
+    "description": "Free height calculator to convert between feet, inches, centimeters, and meters in real-time.",
+    "url": "https://calculatorchoice.com/height-calculator"
+  }
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Height Calculator</h1>
-    <h2>Estimate your future height using parents' heights</h2>
-    <a href="/" class="home-button">Home</a>
+    <h2>Convert between feet, inches, centimeters, and meters easily</h2>
+    <a class="home-button" href="https://calculatorchoice.com">Home</a>
   </header>
 
   <main>
-    <div class="calculator-container">
-      <label for="gender">Gender:</label>
-      <select id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
-
-      <label for="father-height">Father's Height (cm):</label>
-      <input type="number" id="father-height" placeholder="e.g., 180" />
-
-      <label for="mother-height">Mother's Height (cm):</label>
-      <input type="number" id="mother-height" placeholder="e.g., 165" />
-
-      <div class="result">
-        Estimated Height: <span id="result">–</span> cm
-      </div>
+    <div class="calculator-card">
+      <label for="feet">Feet:</label>
+      <input type="number" id="feet" placeholder="e.g. 5">
+      <label for="inches">Inches:</label>
+      <input type="number" id="inches" placeholder="e.g. 8">
+      <label for="centimeters">Centimeters:</label>
+      <input type="number" id="centimeters" placeholder="e.g. 172">
+      <label for="meters">Meters:</label>
+      <input type="number" id="meters" placeholder="e.g. 1.72">
     </div>
+
+    <section class="content">
+      <h3>How to Use the Height Calculator</h3>
+      <p>This height calculator allows you to instantly convert height values across different units. Enter your height in feet/inches or centimeters/meters, and the tool will automatically update the other fields. This is especially helpful for comparing height internationally, tracking growth, or using height data in scientific or health-related calculations.</p>
+    </section>
   </main>
 
   <footer>
-    <nav>
-      <a href="/bmi-calculator">BMI Calculator</a>
-      <a href="/ideal-weight">Ideal Weight</a>
-      <a href="/calorie-calculator">Calorie Calculator</a>
-    </nav>
+    <div id="related-links"></div>
   </footer>
 
   <script src="calculator.js"></script>
