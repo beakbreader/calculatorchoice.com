@@ -3,59 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Predict your child's adult height using our smart calculator based on parental height and gender." />
-  <title>Child Height Predictor Calculator | Estimate Adult Height</title>
-  <meta property="og:title" content="Child Height Predictor Calculator" />
-  <meta property="og:description" content="Accurately estimate your child's adult height using proven formulas. Enter parent heights and child's gender." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://calculatorchoice.com/child-height-predictor" />
-  <meta property="og:image" content="https://calculatorchoice.com/assets/height-predictor-og.png" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Calculator",
-    "name": "Child Height Predictor Calculator",
-    "description": "Estimate the adult height of your child based on parental height and gender using this scientifically-based height predictor calculator.",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "All",
-    "url": "https://calculatorchoice.com/child-height-predictor"
-  }
-  </script>
+  <title>Child Height Predictor Calculator – Estimate Future Adult Height</title>
+  <meta name="description" content="Predict your child's future adult height using our scientifically-backed calculator. Enter parental heights and child data for an accurate estimate." />
   <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Child Height Predictor Calculator",
+      "url": "https://calculatorchoice.com/calculators/height-calculator/",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "description": "Predict your child's future adult height using our scientifically-backed calculator. Enter parental heights and child data for an accurate estimate."
+    }
+  </script>
 </head>
 <body>
-  <main class="calculator-card">
+  <header>
     <h1>Child Height Predictor Calculator</h1>
-    <div class="calculator-inputs">
-      <label>Father's Height: <input type="number" id="fatherHeight" placeholder="cm or in" /></label>
-      <label>Mother's Height: <input type="number" id="motherHeight" placeholder="cm or in" /></label>
-      <label>Units:
-        <select id="unit">
-          <option value="cm">Centimeters</option>
-          <option value="in">Inches</option>
-        </select>
-      </label>
-      <label>Child's Gender:
-        <select id="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </label>
+    <h2>Estimate your child's future adult height based on parental heights and current measurements.</h2>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search calculators..." />
+      <ul id="suggestions"></ul>
     </div>
-    <div class="calculator-result">
-      <h2>Estimated Adult Height: <span id="result">-</span></h2>
-    </div>
+  </header>
+  <main>
+    <section class="calculator-card">
+      <form id="heightForm">
+        <div class="input-group">
+          <label for="fatherHeight">Father's Height (cm):</label>
+          <input type="number" id="fatherHeight" required />
+        </div>
+        <div class="input-group">
+          <label for="motherHeight">Mother's Height (cm):</label>
+          <input type="number" id="motherHeight" required />
+        </div>
+        <div class="input-group">
+          <label for="childGender">Child's Gender:</label>
+          <select id="childGender" required>
+            <option value="">Select</option>
+            <option value="male">Boy</option>
+            <option value="female">Girl</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="childAge">Child's Age (years):</label>
+          <input type="number" id="childAge" min="0" max="18" />
+        </div>
+        <div class="input-group">
+          <label for="childHeight">Child's Current Height (cm):</label>
+          <input type="number" id="childHeight" />
+        </div>
+        <div class="input-group">
+          <label for="childWeight">Child's Current Weight (kg):</label>
+          <input type="number" id="childWeight" />
+        </div>
+      </form>
+      <div id="result">
+        <h3>Predicted Adult Height:</h3>
+        <p id="predictedHeight">--</p>
+      </div>
+    </section>
   </main>
-  <section class="content-section">
-    <h2>How the Height Calculator Works</h2>
-    <p>This height predictor uses the mid-parental height formula, widely used by pediatricians to estimate the adult height of children. Adjustments are made based on the child's gender.</p>
-  </section>
   <footer>
-    <nav>
-      <a href="/bmi-calculator">BMI Calculator</a>
-      <a href="/ideal-weight-calculator">Ideal Weight</a>
-      <a href="/body-fat-calculator">Body Fat</a>
-    </nav>
+    <p>Explore more health calculators:</p>
+    <ul id="relatedCalculators"></ul>
+    <p>&copy; 2025 Calculator Choice</p>
   </footer>
   <script src="calculator.js"></script>
 </body>
