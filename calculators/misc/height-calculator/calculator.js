@@ -1,91 +1,35 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  color: #333;
-}
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('heightForm');
+  const result = document.getElementById('result');
 
-.sticky-header {
-  position: sticky;
-  top: 0;
-  background: #fff;
-  padding: 1em;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-nav {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
+    const father = parseFloat(document.getElementById('fatherHeight').value);
+    const mother = parseFloat(document.getElementById('motherHeight').value);
+    const gender = document.getElementById('gender').value;
+    const unit = document.getElementById('unit').value;
 
-nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
+    if (isNaN(father) || isNaN(mother) || !gender || !unit) {
+      result.textContent = "Please fill in all fields correctly.";
+      return;
+    }
 
-nav input[type="search"] {
-  padding: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+    let prediction;
 
-.container {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 1em;
-}
+    if (gender === 'male') {
+      prediction = (father + mother + 5) / 2;
+    } else {
+      prediction = (father + mother - 5) / 2;
+    }
 
-.card {
-  background: #fff;
-  border-radius: 16px;
-  padding: 2em;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
+    if (unit === 'cm') {
+      prediction *= 2.54;
+    }
 
-form label {
-  display: block;
-  margin-top: 1em;
-  font-weight: bold;
-}
+    prediction = prediction.toFixed(1);
+    const label = unit === 'cm' ? 'cm' : 'inches';
 
-form input,
-form select {
-  width: 100%;
-  padding: 0.75em;
-  margin-top: 0.5em;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-button {
-  margin-top: 1.5em;
-  padding: 0.75em 1.5em;
-  background-color: #ff758c;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.result {
-  margin-top: 2em;
-  font-size: 1.25em;
-  font-weight: bold;
-}
-
-.explanation h2, .explanation h3 {
-  margin-top: 2em;
-  font-size: 1.5em;
-}
-
-.explanation ul, .explanation ol, .explanation dl {
-  margin-left: 1.5em;
-  margin-bottom: 1em;
-}
+    result.textContent = `Your predicted adult height is approximately ${prediction} ${label}.`;
+  });
+});
