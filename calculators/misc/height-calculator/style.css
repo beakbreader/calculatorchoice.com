@@ -1,112 +1,106 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #ff7eb3, #65d6ff);
+  background: linear-gradient(135deg, #ff758c, #6a82fb);
   color: #333;
-  line-height: 1.6;
-}
-
-nav {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
-  background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.gradient-bg {
+.header {
   text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #ff7eb3, #65d6ff);
   color: white;
+  margin-bottom: 2rem;
 }
 
-.gradient-bg h1 {
+.header h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin: 0.2em 0;
 }
 
-.gradient-bg h2 {
-  font-size: 1.25rem;
-  font-weight: 300;
+.header h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
-.calculator-card {
+.calculator-container {
   background: white;
-  max-width: 500px;
-  margin: 2rem auto;
   padding: 2rem;
   border-radius: 2xl;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
-.calculator-card label {
-  display: flex;
-  flex-direction: column;
-  font-weight: 600;
+.unit-selector,
+.input-group {
+  margin-bottom: 1.5rem;
 }
 
-input, select {
-  padding: 0.5rem;
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
-button {
-  background: linear-gradient(to right, #ff7eb3, #65d6ff);
-  border: none;
-  padding: 0.75rem;
-  font-size: 1rem;
-  color: white;
+select:focus,
+input[type="number"]:focus {
+  box-shadow: 0 0 8px rgba(106, 130, 251, 0.6);
+  outline: none;
+}
+
+.result {
+  font-size: 1.5rem;
   font-weight: bold;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-  transform: translateY(-2px);
-}
-
-#result {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #6200ea;
+  color: #6a82fb;
+  min-height: 2rem;
 }
 
 .education {
   max-width: 600px;
-  margin: 3rem auto;
+  margin-top: 3rem;
   background: white;
   padding: 2rem;
-  border-radius: 2xl;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
 .education h3 {
-  color: #6200ea;
+  font-size: 1.5rem;
+  color: #6a82fb;
+  margin-bottom: 1rem;
 }
 
 footer {
-  text-align: center;
-  padding: 2rem;
+  margin-top: 3rem;
+  padding: 1rem;
   background: white;
-  margin-top: 2rem;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #eee;
 }
 
-footer a {
-  color: #6200ea;
+footer nav a {
+  margin: 0 1rem;
+  color: #6a82fb;
   text-decoration: none;
+  font-weight: bold;
 }
 
-footer a:hover {
+footer nav a:hover {
   text-decoration: underline;
 }

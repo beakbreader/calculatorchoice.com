@@ -1,29 +1,32 @@
-function predictHeight() {
-  const mother = parseFloat(document.getElementById("motherHeight").value);
-  const father = parseFloat(document.getElementById("fatherHeight").value);
-  const gender = document.getElementById("gender").value;
-  const age = parseInt(document.getElementById("age").value);
-  const current = parseFloat(document.getElementById("currentHeight").value);
+// Height Calculator Logic
 
-  const resultBox = document.getElementById("result");
-  resultBox.textContent = "";
+const unitSelector = document.getElementById('unit');
+const heightInput = document.getElementById('heightInput');
+const resultDiv = document.getElementById('result');
 
-  if (isNaN(mother) || isNaN(father) || isNaN(age) || isNaN(current)) {
-    resultBox.textContent = "Please fill in all fields with valid numbers.";
+function convertHeight() {
+  const unit = unitSelector.value;
+  const value = parseFloat(heightInput.value);
+
+  if (isNaN(value) || value < 0) {
+    resultDiv.textContent = 'Please enter a valid positive number';
     return;
   }
 
-  let midParental;
-  if (gender === "male") {
-    midParental = (father + mother + 13) / 2;
+  let converted, unitLabel;
+
+  if (unit === 'inches') {
+    converted = (value * 2.54).toFixed(2);
+    unitLabel = 'centimeters';
   } else {
-    midParental = (father + mother - 13) / 2;
+    converted = (value / 2.54).toFixed(2);
+    unitLabel = 'inches';
   }
 
-  // Adjustment factor (simple linear growth multiplier based on age)
-  const growthFactor = age < 10 ? 1.2 : age < 14 ? 1.1 : age < 17 ? 1.05 : 1.02;
-  const predicted = (midParental + current * growthFactor) / 2;
-
-  const finalHeight = Math.round(predicted);
-  resultBox.textContent = `Your predicted adult height is approximately ${finalHeight} cm.`;
+  resultDiv.textContent = `${converted} ${unitLabel}`;
 }
+
+unitSelector.addEventListener('change', convertHeight);
+heightInput.addEventListener('input', convertHeight);
+
+document.addEventListener('DOMContentLoaded', convertHeight);
