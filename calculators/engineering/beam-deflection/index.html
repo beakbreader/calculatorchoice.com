@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Beam Deflection Calculator</title>
+  <link rel='stylesheet' href='../../style.css'>
+  <script defer src='calculator.js'></script>
+</head>
+<body>
+  <h1>Beam Deflection Calculator</h1>
+  <form id='calc-form'>
+    <label>Load (N): <input type='number' id='load' name='load' required></label><br>
+    <label>Length (m): <input type='number' id='length' name='length' required></label><br>
+    <label>Elastic Modulus (Pa): <input type='number' id='modulus' name='modulus' required></label><br>
+    <label>Moment of Inertia (m^4): <input type='number' id='inertia' name='inertia' required></label><br>
+    <button type='submit'>Calculate</button>
+  </form>
+  <div id='result'></div>
+</body>
+</html>
