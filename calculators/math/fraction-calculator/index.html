@@ -3,11 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fraction Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Fraction Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Fraction Calculator</h2>
+      <form id="fracForm">
+        <div class="fraction">
+          <input type="number" id="num1" placeholder="Numerator" required>
+          <span>/</span>
+          <input type="number" id="den1" placeholder="Denominator" required>
+        </div>
+
+        <select id="operation">
+          <option value="add">+</option>
+          <option value="subtract">−</option>
+          <option value="multiply">×</option>
+          <option value="divide">÷</option>
+        </select>
+
+        <div class="fraction">
+          <input type="number" id="num2" placeholder="Numerator" required>
+          <span>/</span>
+          <input type="number" id="den2" placeholder="Denominator" required>
+        </div>
+
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>About Fraction Operations</h3>
+      <p>This calculator performs basic operations on two fractions and simplifies the result.</p>
+
+      <h4>Disclaimer:</h4>
+      <p>Only numeric values are supported. Division by zero is not allowed.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/math/decimal-to-fraction/">Decimal to Fraction</a></li>
+        <li><a href="/calculators/math/percentage-calculator/">Percentage Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>

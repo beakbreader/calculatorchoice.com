@@ -3,11 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ideal Weight Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Ideal Weight Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Ideal Weight Calculator</h2>
+      <form id="idealForm">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" min="0" required>
+
+        <button type="submit">Calculate Ideal Weight</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Ideal Weight is Determined</h3>
+      <p>This calculator uses the Devine formula to estimate a healthy weight range based on your height and gender.</p>
+
+      <h4>Formula:</h4>
+      <p><code>Men: 50 kg + 2.3 kg × (height in inches − 60)</code><br>
+      <code>Women: 45.5 kg + 2.3 kg × (height in inches − 60)</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>Ideal weight formulas provide general guidance and do not account for individual differences in body composition.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/fitness/bmi-calculator/">BMI Calculator</a></li>
+        <li><a href="/calculators/fitness/bmr-calculator/">BMR Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>

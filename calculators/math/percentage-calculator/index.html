@@ -3,11 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Percentage Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Percentage Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Percentage Calculator</h2>
+      <form id="percentForm">
+        <label for="part">Part:</label>
+        <input type="number" id="part" required>
+
+        <label for="whole">Whole:</label>
+        <input type="number" id="whole" required>
+
+        <button type="submit">Calculate Percentage</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>Percentage Basics</h3>
+      <p>Percentages express numbers as parts of 100. Use this tool to see what percent one number is of another.</p>
+
+      <h4>Formula:</h4>
+      <p><code>Percentage = (Part / Whole) × 100</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>Only valid numeric inputs are accepted. The whole must be non-zero.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/math/convert-calculator/">Convert Calculator</a></li>
+        <li><a href="/calculators/math/average-calculator/">Average Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
