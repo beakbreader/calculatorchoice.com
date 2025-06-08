@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pH Calculator | Calculator Choice</title>
+  <meta name="description" content="Calculate solution pH from hydrogen ion concentration." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/index.html#chemistry">Chemistry</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>pH Calculator</h2>
+      <form id="phForm">
+        <label for="concentration">Hydrogen ion concentration (M):</label>
+        <input type="number" id="concentration" step="any" required />
+
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+    <section class="card explanation">
+      <h3>pH Formula</h3>
+      <p>pH measures the acidity of a solution.</p>
+      <p><code>pH = -log₁₀ [H⁺]</code></p>
+    </section>
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="../poh-calculator/">pOH Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>

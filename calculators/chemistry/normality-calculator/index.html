@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Normality Calculator | Calculator Choice</title>
+  <meta name="description" content="Determine solution normality from equivalents and volume." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/index.html#chemistry">Chemistry</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>Normality Calculator</h2>
+      <form id="normalityForm">
+        <label for="equivalents">Equivalents of solute:</label>
+        <input type="number" id="equivalents" step="any" required />
+
+        <label for="volume">Solution volume (L):</label>
+        <input type="number" id="volume" step="any" required />
+
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+    <section class="card explanation">
+      <h3>Normality Formula</h3>
+      <p>Normality equals equivalents per liter of solution.</p>
+      <p><code>N = equivalents / volume</code></p>
+    </section>
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="../molarity-calculator/">Molarity Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>

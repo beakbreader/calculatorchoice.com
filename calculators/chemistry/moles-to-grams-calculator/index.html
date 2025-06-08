@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moles to Grams Calculator | Calculator Choice</title>
+  <meta name="description" content="Convert amount in moles to grams using molar mass." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/index.html#chemistry">Chemistry</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>Moles to Grams Calculator</h2>
+      <form id="molesToGramsForm">
+        <label for="moles">Moles:</label>
+        <input type="number" id="moles" step="any" required />
+
+        <label for="molarMass">Molar mass (g/mol):</label>
+        <input type="number" id="molarMass" step="any" required />
+
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+    <section class="card explanation">
+      <h3>Conversion Formula</h3>
+      <p>Multiply moles by molar mass to find grams.</p>
+      <p><code>grams = moles × molar mass</code></p>
+    </section>
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="../grams-to-moles-calculator/">Grams to Moles</a></li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>
