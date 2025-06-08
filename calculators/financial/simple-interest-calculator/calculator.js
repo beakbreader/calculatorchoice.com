@@ -1,7 +1,13 @@
 // calculator.js
 
 function formatCurrency(value) {
-  return '$' + parseFloat(value).toFixed(2).toLocaleString();
+  return (
+    '$' +
+    parseFloat(value).toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    })
+  );
 }
 
 function calculateSimpleInterest() {
