@@ -1,0 +1,88 @@
+{
+  "categories": [
+    {
+      "slug": "engineering",
+      "title": "Engineering",
+      "calculators": [
+        {
+          "id": "beam-deflection",
+          "title": "Beam Deflection Calculator",
+          "inputs": [
+            {"name": "load", "label": "Load (N)", "type": "number"},
+            {"name": "length", "label": "Length (m)", "type": "number"},
+            {"name": "modulus", "label": "Elastic Modulus (Pa)", "type": "number"},
+            {"name": "inertia", "label": "Moment of Inertia (m^4)", "type": "number"}
+          ],
+          "compute": "(load * Math.pow(length,3)) / (48 * modulus * inertia)"
+        }
+      ]
+    },
+    {
+      "slug": "astronomy",
+      "title": "Astronomy",
+      "calculators": [
+        {
+          "id": "escape-velocity",
+          "title": "Escape Velocity Calculator",
+          "inputs": [
+            {"name": "mass", "label": "Mass of Body (kg)", "type": "number"},
+            {"name": "radius", "label": "Radius (m)", "type": "number"}
+          ],
+          "compute": "Math.sqrt(2 * 6.67430e-11 * mass / radius)"
+        }
+      ]
+    },
+    {
+      "slug": "physics",
+      "title": "Physics",
+      "calculators": [
+        {
+          "id": "projectile-range",
+          "title": "Projectile Range Calculator",
+          "inputs": [
+            {"name": "velocity", "label": "Initial Velocity (m/s)", "type": "number"},
+            {"name": "angle", "label": "Launch Angle (degrees)", "type": "number"}
+          ],
+          "compute": "(Math.pow(velocity,2) * Math.sin(2 * angle * Math.PI / 180)) / 9.81"
+        },
+        {
+          "id": "pendulum-period",
+          "title": "Simple Pendulum Period Calculator",
+          "inputs": [
+            {"name": "length", "label": "Length (m)", "type": "number"}
+          ],
+          "compute": "2 * Math.PI * Math.sqrt(length / 9.81)"
+        }
+      ]
+    },
+    {
+      "slug": "electronics",
+      "title": "Electronics",
+      "calculators": [
+        {
+          "id": "ohms-law",
+          "title": "Ohm's Law Calculator",
+          "inputs": [
+            {"name": "voltage", "label": "Voltage (V)", "type": "number"},
+            {"name": "resistance", "label": "Resistance (Ω)", "type": "number"}
+          ],
+          "compute": "voltage / resistance"
+        }
+      ]
+    },
+    {
+      "slug": "health",
+      "title": "Health",
+      "calculators": [
+        {
+          "id": "water-intake",
+          "title": "Daily Water Intake Calculator",
+          "inputs": [
+            {"name": "weight", "label": "Body Weight (kg)", "type": "number"}
+          ],
+          "compute": "weight * 0.033"
+        }
+      ]
+    }
+  ]
+}

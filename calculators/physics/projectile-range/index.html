@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Projectile Range Calculator</title>
+  <link rel='stylesheet' href='../../style.css'>
+  <script defer src='calculator.js'></script>
+</head>
+<body>
+  <h1>Projectile Range Calculator</h1>
+  <form id='calc-form'>
+    <label>Initial Velocity (m/s): <input type='number' id='velocity' name='velocity' required></label><br>
+    <label>Launch Angle (degrees): <input type='number' id='angle' name='angle' required></label><br>
+    <button type='submit'>Calculate</button>
+  </form>
+  <div id='result'></div>
+</body>
+</html>
