@@ -3,11 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decimal To Fraction</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Decimal To Fraction</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Decimal to Fraction Converter</h2>
+      <form id="decForm">
+        <label for="decimal">Decimal Number:</label>
+        <input type="text" id="decimal" placeholder="e.g. 0.75" required>
+        <button type="submit">Convert</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>How Conversion Works</h3>
+      <p>This tool converts a decimal number into a simplified fraction.</p>
+
+      <h4>Steps:</h4>
+      <p>Multiply by a power of ten to remove the decimal, then reduce the fraction using the greatest common divisor.</p>
+
+      <h4>Disclaimer:</h4>
+      <p>Results are rounded to remove floating point errors.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/math/convert-calculator/">Convert Calculator</a></li>
+        <li><a href="/calculators/math/fraction-calculator/">Fraction Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>

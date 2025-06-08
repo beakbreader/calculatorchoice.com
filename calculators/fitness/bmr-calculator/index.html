@@ -3,11 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bmr Calculator</title>
+  <title><TITLE HERE></title>
+  <meta name="description" content="<META DESCRIPTION HERE>">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="calculator.js"></script>
 </head>
 <body>
-  <h1>Bmr Calculator</h1>
-  <p>This calculator is under development.</p>
-  <a href="/">← Back to Home</a>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/calculators">Calculators</a>
+        <a href="/about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>BMR Calculator</h2>
+      <form id="bmrForm">
+        <label for="age">Age:</label>
+        <input type="number" id="age" min="0" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" min="0" required>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" min="0" required>
+
+        <button type="submit">Calculate BMR</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card explanation">
+      <h3>About BMR</h3>
+      <p>Basal Metabolic Rate (BMR) represents the number of calories your body burns at rest. It helps estimate your daily energy needs.</p>
+
+      <h4>Formula:</h4>
+      <p>Mifflin-St Jeor Equation:</p>
+      <p><code>Men: 10×weight + 6.25×height − 5×age + 5</code><br>
+      <code>Women: 10×weight + 6.25×height − 5×age − 161</code></p>
+
+      <h4>Disclaimer:</h4>
+      <p>Results provide an estimate of calories burned per day at rest. Actual needs vary with activity and individual factors.</p>
+    </section>
+
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="/calculators/fitness/bmi-calculator/">BMI Calculator</a></li>
+        <li><a href="/calculators/fitness/calorie-calculator/">Calorie Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
 </body>
 </html>
