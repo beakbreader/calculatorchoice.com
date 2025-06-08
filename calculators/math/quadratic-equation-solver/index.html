@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quadratic Equation Solver</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="https://calculatorchoice.com">Home</a>
+    <input type="text" id="searchBar" placeholder="Search calculators..." oninput="filterCalculators()" />
+    <ul id="searchResults"></ul>
+  </nav>
+  <header>
+    <h1>Quadratic Equation Solver</h1>
+    <h2>Solve ax² + bx + c = 0</h2>
+  </header>
+  <main>
+    <section class="calculator-card">
+      <label for="equation">Quadratic Expression</label>
+      <input type="text" id="equation" placeholder="e.g. 2x^2+3x-5" />
+
+      <p style="text-align:center;margin-top:1em;">or enter coefficients</p>
+      <label for="coefA">a</label>
+      <input type="number" id="coefA" placeholder="a" />
+      <label for="coefB">b</label>
+      <input type="number" id="coefB" placeholder="b" />
+      <label for="coefC">c</label>
+      <input type="number" id="coefC" placeholder="c" />
+
+      <button id="solveBtn">Solve</button>
+      <div id="result"></div>
+    </section>
+
+    <section class="seo-content">
+      <h3>How to Solve a Quadratic Equation</h3>
+      <p>The standard quadratic form <em>ax² + bx + c = 0</em> can be solved using the quadratic formula:</p>
+      <p><strong>x = [-b ± √(b² − 4ac)] / 2a</strong></p>
+      <p>The discriminant <em>(b² - 4ac)</em> tells you whether the roots are real or complex.</p>
+    </section>
+  </main>
+  <footer>
+    <a href="https://calculatorchoice.com">Calculator Choice</a>
+  </footer>
+
+  <script src="calculator.js"></script>
+  <script>
+    document.getElementById('solveBtn').addEventListener('click', function() {
+      const eqInput = document.getElementById('equation');
+      if (!eqInput.value) {
+        const a = document.getElementById('coefA').value || 0;
+        const b = document.getElementById('coefB').value || 0;
+        const c = document.getElementById('coefC').value || 0;
+        const signB = b >= 0 ? '+' : '';
+        const signC = c >= 0 ? '+' : '';
+        eqInput.value = `${a}x^2${signB}${b}x${signC}${c}`;
+      }
+      parseAndSolve();
+    });
+  </script>
+</body>
+</html>
