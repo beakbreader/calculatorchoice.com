@@ -1,7 +1,11 @@
 // calculator.js
 
 function formatCurrency(value) {
-  return '$' + parseFloat(value).toFixed(2).toLocaleString();
+  return '$' +
+    Number(value).toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
 }
 
 function calculateCompoundInterest() {
