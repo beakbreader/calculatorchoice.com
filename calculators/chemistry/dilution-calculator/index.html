@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dilution Calculator | Calculator Choice</title>
+  <meta name="description" content="Determine the volume needed to dilute a solution using C1V1 = C2V2." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/index.html#chemistry">Chemistry</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>Dilution Calculator</h2>
+      <form id="dilutionForm">
+        <label for="c1">Initial concentration (C1, M):</label>
+        <input type="number" id="c1" step="any" required />
+
+        <label for="v1">Initial volume (V1, L):</label>
+        <input type="number" id="v1" step="any" required />
+
+        <label for="c2">Final concentration (C2, M):</label>
+        <input type="number" id="c2" step="any" required />
+
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+    <section class="card explanation">
+      <h3>Dilution Formula</h3>
+      <p>The relationship between concentrations and volumes is expressed as <code>C1V1 = C2V2</code>.</p>
+      <p>This tool solves for the final volume (V2).</p>
+    </section>
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="../molarity-calculator/">Molarity Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>
