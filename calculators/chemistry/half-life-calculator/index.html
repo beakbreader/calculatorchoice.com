@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Half-Life Calculator | Calculator Choice</title>
+  <meta name="description" content="Determine remaining quantity after a given time using half-life." />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Calculator Choice</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/index.html#chemistry">Chemistry</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>Half-Life Calculator</h2>
+      <form id="halfLifeForm">
+        <label for="initial">Initial amount:</label>
+        <input type="number" id="initial" step="any" required />
+
+        <label for="halfLife">Half-life time:</label>
+        <input type="number" id="halfLife" step="any" required />
+
+        <label for="time">Elapsed time:</label>
+        <input type="number" id="time" step="any" required />
+
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="result" class="result"></div>
+    </section>
+    <section class="card explanation">
+      <h3>Half-Life Formula</h3>
+      <p>Amount remaining is proportional to powers of one half.</p>
+      <p><code>N = N₀ × (1/2)^{t / t₁₂}</code></p>
+    </section>
+    <footer class="card related">
+      <h4>Related Calculators</h4>
+      <ul>
+        <li><a href="../molarity-calculator/">Molarity Calculator</a></li>
+      </ul>
+    </footer>
+  </main>
+</body>
+</html>
