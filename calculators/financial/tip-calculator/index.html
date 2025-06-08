@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Calculator | Calculator Choice</title>
+  <meta name="description" content="Easily calculate restaurant tips and split bills with our free online Tip Calculator." />
+  <meta property="og:title" content="Tip Calculator" />
+  <meta property="og:description" content="Quickly compute tip amounts and totals for groups." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calculatorchoice.com/calculators/tip-calculator/" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="calculator.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Calculator",
+    "name": "Tip Calculator",
+    "description": "Calculate tip and split bills among diners.",
+    "url": "https://calculatorchoice.com/calculators/tip-calculator/"
+  }
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="https://calculatorchoice.com">Home</a>
+    <a href="/calculators/tip-calculator/">This Page</a>
+  </nav>
+  <main>
+    <section class="calculator-container">
+      <h1>Tip Calculator</h1>
+      <p>Enter your bill details to find the perfect tip.</p>
+      <div class="input-group">
+        <label for="bill">Bill Amount ($):</label>
+        <input type="number" id="bill" placeholder="e.g. 50" />
+      </div>
+      <div class="input-group">
+        <label for="percentage">Tip Percentage (%):</label>
+        <input type="number" id="percentage" placeholder="e.g. 15" />
+      </div>
+      <div class="input-group">
+        <label for="people">Number of People:</label>
+        <input type="number" id="people" placeholder="e.g. 1" />
+      </div>
+      <div id="output" class="result-box">Enter values to calculate.</div>
+    </section>
+    <section class="info-section">
+      <h2>How to Calculate a Tip</h2>
+      <p>Multiply the bill by the tip percentage and add it to the total. Split the sum among diners if needed.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Explore more calculators on Calculator Choice.</p>
+  </footer>
+</body>
+</html>
