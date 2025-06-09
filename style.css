@@ -1,13 +1,13 @@
 
 :root {
-  --accent-color: #6a0dad;
-  --accent-light: #f3e8ff;
+  --accent-color: #007bff;
+  --accent-light: #e6f2ff;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #ffffff, #f1f5ff);
+  background: linear-gradient(to bottom, #ffffff, #f4faff);
   color: #333;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ nav ul li a:hover {
   transition: background 0.2s ease;
 }
 .hero .cta:hover {
-  background: #0056d8;
+  background: #0056b3;
 }
 .category-sections {
   padding: 2rem;
@@ -159,7 +159,7 @@ button {
   transition: background 0.2s ease;
 }
 button:hover {
-  background: #0056d8;
+  background: #0056b3;
 }
 #result {
   margin-top: 1.5rem;
