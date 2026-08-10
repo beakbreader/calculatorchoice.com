@@ -1,145 +1,208 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5423374274818618"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore 25+ beautiful online calculators for finance, health, math, education, and parenting.">
-  <title>Calculator Choice – Online Calculators for Everything</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5423374274818618" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="40+ free online calculators for money, health, school and science. Type what you need, get an instant answer — no sign-up.">
+  <meta name="theme-color" content="#0F1220">
+  <title>Calculator Choice – Free Online Calculators for Everything</title>
+  <link rel="canonical" href="https://calculatorchoice.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Nunito+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="header">
-    <div class="logo">Calculator Choice</div>
-    <nav>
-      <ul>
-        <li><a href="#financial">Financial</a></li>
-        <li><a href="#math">Math</a></li>
-        <li><a href="#fitness">Fitness</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#chemistry">Chemistry</a></li>
-        <li><a href="#parenting">Parenting</a></li>
-        <li><a href="#astronomy">Astronomy</a></li>
-        <li><a href="#electronics">Electronics</a></li>
-        <li><a href="#engineering">Engineering</a></li>
-        <li><a href="#health">Health</a></li>
-        <li><a href="#physics">Physics</a></li>
-        <li><a href="#graphing">Graphing</a></li>
-      </ul>
-    </nav>
-  </header>
+
+<header class="header">
+  <a class="logo" href="/">calculator<b>choice</b></a>
+  <nav aria-label="Categories">
+    <ul>
+      <li><a href="#financial">Money</a></li>
+      <li><a href="#fitness">Health</a></li>
+      <li><a href="#education">School</a></li>
+      <li><a href="#chemistry">Science</a></li>
+      <li><a href="#graphing">Graphing</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="shell">
   <section class="hero">
-    <h1>Trusted Calculators for Real Life</h1>
-    <p>Your hub for quick and reliable answers.</p>
-    <input class="search" type="text" placeholder="Search 40+ calculators…" />
-    <a class="cta" href="#financial">Browse All Calculators</a>
+    <h1>Answers that feel<br><span>effortless</span></h1>
+    <p class="tagline">40+ free calculators for money, health, school and science. No sign-up, no clutter — just the number you came for.</p>
+
+    <div class="search-wrap">
+      <input class="search" id="calc-search" type="search" autocomplete="off"
+             placeholder="Try “compound interest” or “BMI”…" aria-label="Search calculators">
+      <span class="search-hint" aria-hidden="true">/</span>
+    </div>
+
+    <div class="chips" id="chips">
+      <a class="chip" href="calculators/financial/compound-interest-calculator/">💰 Compound interest</a>
+      <a class="chip" href="calculators/fitness/bmi-calculator/">🏃 BMI</a>
+      <a class="chip" href="calculators/chemistry/molarity-calculator/">🧪 Molarity</a>
+      <a class="chip" href="calculators/education/final-grade-calculator/">🎓 Final grade</a>
+    </div>
+
+    <p class="no-results" id="no-results" hidden>Nothing matches that. Try a shorter word — “interest”, “grade”, “mass”.</p>
   </section>
-  <main class="category-sections">
+</div>
 
-    <section id="financial">
-      <h2>Financial Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/financial/loan-calculator/">Loan Calculator</a><a class="card" href="calculators/financial/mortgage-calculator/">Mortgage Calculator</a><a class="card" href="calculators/financial/compound-interest-calculator/">Compound Interest Calculator</a><a class="card" href="calculators/financial/simple-interest-calculator/">Simple Interest Calculator</a><a class="card" href="calculators/financial/savings-goal-calculator/">Savings Goal Calculator</a><a class="card" href="calculators/financial/tip-calculator/">Tip Calculator</a>
-      </div>
-    </section>
-    
+<main class="shell">
+  <div class="categories">
 
-    <section id="math">
-      <h2>Math Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/math/percentage-calculator/">Percentage Calculator</a><a class="card" href="calculators/math/fraction-calculator/">Fraction Calculator</a><a class="card" href="calculators/math/average-calculator/">Average Calculator</a><a class="card" href="calculators/math/quadratic-equation-solver/">Quadratic Equation Solver</a><a class="card" href="calculators/math/decimal-to-fraction/">Decimal To Fraction</a>
-      </div>
-    </section>
-    
-
-    <section id="fitness">
-      <h2>Fitness Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/fitness/bmi-calculator/">Bmi Calculator</a><a class="card" href="calculators/fitness/calorie-calculator/">Calorie Calculator</a><a class="card" href="calculators/fitness/bmr-calculator/">Bmr Calculator</a><a class="card" href="calculators/fitness/macro-calculator/">Macro Calculator</a><a class="card" href="calculators/fitness/ideal-weight-calculator/">Ideal Weight Calculator</a>
-      </div>
-    </section>
-    
-
-    <section id="education">
-      <h2>Education Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/education/gpa-calculator/">Gpa Calculator</a><a class="card" href="calculators/education/final-grade-calculator/">Final Grade Calculator</a><a class="card" href="calculators/education/study-time-calculator/">Study Time Calculator</a><a class="card" href="calculators/education/grade-percentage-calculator/">Grade Percentage Calculator</a><a class="card" href="calculators/education/exam-score-needed/">Exam Score Needed</a>
+    <section class="cat-card" id="financial">
+      <div class="ico" aria-hidden="true">💰</div>
+      <h2>Financial <span class="count">6</span></h2>
+      <div class="links">
+        <a href="calculators/financial/loan-calculator/">Loan</a>
+        <a href="calculators/financial/mortgage-calculator/">Mortgage</a>
+        <a href="calculators/financial/compound-interest-calculator/">Compound Interest</a>
+        <a href="calculators/financial/simple-interest-calculator/">Simple Interest</a>
+        <a href="calculators/financial/savings-goal-calculator/">Savings Goal</a>
+        <a href="calculators/financial/tip-calculator/">Tip</a>
       </div>
     </section>
 
-    <section id="chemistry">
-      <h2>Chemistry Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/chemistry/molarity-calculator/">Molarity Calculator</a><a class="card" href="calculators/chemistry/dilution-calculator/">Dilution Calculator</a><a class="card" href="calculators/chemistry/ph-calculator/">pH Calculator</a><a class="card" href="calculators/chemistry/poh-calculator/">pOH Calculator</a><a class="card" href="calculators/chemistry/ideal-gas-law-calculator/">Ideal Gas Law Calculator</a><a class="card" href="calculators/chemistry/percent-yield-calculator/">Percent Yield Calculator</a><a class="card" href="calculators/chemistry/moles-to-grams-calculator/">Moles To Grams</a><a class="card" href="calculators/chemistry/grams-to-moles-calculator/">Grams To Moles</a><a class="card" href="calculators/chemistry/half-life-calculator/">Half-Life Calculator</a><a class="card" href="calculators/chemistry/percent-composition-calculator/">Percent Composition</a><a class="card" href="calculators/chemistry/molality-calculator/">Molality Calculator</a><a class="card" href="calculators/chemistry/normality-calculator/">Normality Calculator</a>
+    <section class="cat-card" id="math">
+      <div class="ico" aria-hidden="true">➗</div>
+      <h2>Math <span class="count">5</span></h2>
+      <div class="links">
+        <a href="calculators/math/percentage-calculator/">Percentage</a>
+        <a href="calculators/math/fraction-calculator/">Fraction</a>
+        <a href="calculators/math/average-calculator/">Average</a>
+        <a href="calculators/math/quadratic-equation-solver/">Quadratic Solver</a>
+        <a href="calculators/math/decimal-to-fraction/">Decimal to Fraction</a>
       </div>
     </section>
 
-    <section id="parenting">
-      <h2>Parenting Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/parenting/due-date-calculator/">Due Date Calculator</a><a class="card" href="calculators/parenting/baby-growth-chart/">Baby Growth Chart</a><a class="card" href="calculators/parenting/child-bmi-calculator/">Child Bmi Calculator</a><a class="card" href="calculators/parenting/nap-schedule-calculator/">Nap Schedule Calculator</a><a class="card" href="calculators/parenting/baby-feeding-calculator/">Baby Feeding Calculator</a>
-      </div>
-    </section>
-    
-
-    <section id="misc">
-      <h2>Misc Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/misc/height-calculator/">Height Calculator</a>
+    <section class="cat-card" id="fitness">
+      <div class="ico" aria-hidden="true">🏃</div>
+      <h2>Fitness <span class="count">5</span></h2>
+      <div class="links">
+        <a href="calculators/fitness/bmi-calculator/">BMI</a>
+        <a href="calculators/fitness/calorie-calculator/">Calorie</a>
+        <a href="calculators/fitness/bmr-calculator/">BMR</a>
+        <a href="calculators/fitness/macro-calculator/">Macro</a>
+        <a href="calculators/fitness/ideal-weight-calculator/">Ideal Weight</a>
       </div>
     </section>
 
-    <section id="astronomy">
-      <h2>Astronomy Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/astronomy/escape-velocity/">Escape Velocity Calculator</a>
+    <section class="cat-card" id="education">
+      <div class="ico" aria-hidden="true">🎓</div>
+      <h2>Education <span class="count">5</span></h2>
+      <div class="links">
+        <a href="calculators/education/gpa-calculator/">GPA</a>
+        <a href="calculators/education/final-grade-calculator/">Final Grade</a>
+        <a href="calculators/education/study-time-calculator/">Study Time</a>
+        <a href="calculators/education/grade-percentage-calculator/">Grade Percentage</a>
+        <a href="calculators/education/exam-score-needed/">Exam Score Needed</a>
       </div>
     </section>
 
-    <section id="electronics">
-      <h2>Electronics Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/electronics/ohms-law/">Ohm's Law Calculator</a>
+    <section class="cat-card" id="chemistry">
+      <div class="ico" aria-hidden="true">🧪</div>
+      <h2>Chemistry <span class="count">12</span></h2>
+      <div class="links">
+        <a href="calculators/chemistry/molarity-calculator/">Molarity</a>
+        <a href="calculators/chemistry/dilution-calculator/">Dilution</a>
+        <a href="calculators/chemistry/ph-calculator/">pH</a>
+        <a href="calculators/chemistry/poh-calculator/">pOH</a>
+        <a href="calculators/chemistry/ideal-gas-law-calculator/">Ideal Gas Law</a>
+        <a href="calculators/chemistry/percent-yield-calculator/">Percent Yield</a>
+        <a href="calculators/chemistry/moles-to-grams-calculator/">Moles to Grams</a>
+        <a href="calculators/chemistry/grams-to-moles-calculator/">Grams to Moles</a>
+        <a href="calculators/chemistry/half-life-calculator/">Half-Life</a>
+        <a href="calculators/chemistry/percent-composition-calculator/">Percent Composition</a>
+        <a href="calculators/chemistry/molality-calculator/">Molality</a>
+        <a href="calculators/chemistry/normality-calculator/">Normality</a>
       </div>
     </section>
 
-    <section id="engineering">
-      <h2>Engineering Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/engineering/beam-deflection/">Beam Deflection Calculator</a>
+    <section class="cat-card" id="parenting">
+      <div class="ico" aria-hidden="true">👶</div>
+      <h2>Parenting <span class="count">5</span></h2>
+      <div class="links">
+        <a href="calculators/parenting/due-date-calculator/">Due Date</a>
+        <a href="calculators/parenting/baby-growth-chart/">Baby Growth Chart</a>
+        <a href="calculators/parenting/child-bmi-calculator/">Child BMI</a>
+        <a href="calculators/parenting/nap-schedule-calculator/">Nap Schedule</a>
+        <a href="calculators/parenting/baby-feeding-calculator/">Baby Feeding</a>
       </div>
     </section>
 
-    <section id="health">
-      <h2>Health Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/health/water-intake/">Daily Water Intake Calculator</a>
+    <section class="cat-card" id="physics">
+      <div class="ico" aria-hidden="true">🚀</div>
+      <h2>Physics <span class="count">2</span></h2>
+      <div class="links">
+        <a href="calculators/physics/projectile-range/">Projectile Range</a>
+        <a href="calculators/physics/pendulum-period/">Pendulum Period</a>
       </div>
     </section>
 
-    <section id="physics">
-      <h2>Physics Calculators</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/physics/projectile-range/">Projectile Range Calculator</a><a class="card" href="calculators/physics/pendulum-period/">Simple Pendulum Period</a>
+    <section class="cat-card" id="astronomy">
+      <div class="ico" aria-hidden="true">🪐</div>
+      <h2>Astronomy <span class="count">1</span></h2>
+      <div class="links">
+        <a href="calculators/astronomy/escape-velocity/">Escape Velocity</a>
       </div>
     </section>
 
-    <section id="graphing">
-      <h2>Graphing Tools</h2>
-      <div class="calculator-grid">
-        <a class="card" href="calculators/graphingcalculator/">Interactive Graphing Calculator</a>
+    <section class="cat-card" id="electronics">
+      <div class="ico" aria-hidden="true">⚡</div>
+      <h2>Electronics <span class="count">1</span></h2>
+      <div class="links">
+        <a href="calculators/electronics/ohms-law/">Ohm's Law</a>
       </div>
     </section>
-    
-  </main>
-  <footer class="footer">
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a></p>
-    <p>Calculator Choice © 2025</p>
-  </footer>
+
+    <section class="cat-card" id="engineering">
+      <div class="ico" aria-hidden="true">🔧</div>
+      <h2>Engineering <span class="count">1</span></h2>
+      <div class="links">
+        <a href="calculators/engineering/beam-deflection/">Beam Deflection</a>
+      </div>
+    </section>
+
+    <section class="cat-card" id="health">
+      <div class="ico" aria-hidden="true">💧</div>
+      <h2>Health <span class="count">1</span></h2>
+      <div class="links">
+        <a href="calculators/health/water-intake/">Daily Water Intake</a>
+      </div>
+    </section>
+
+    <section class="cat-card" id="misc">
+      <div class="ico" aria-hidden="true">📐</div>
+      <h2>Misc <span class="count">1</span></h2>
+      <div class="links">
+        <a href="calculators/misc/height-calculator/">Height</a>
+      </div>
+    </section>
+
+    <section class="cat-card" id="graphing">
+      <div class="ico" aria-hidden="true">📈</div>
+      <h2>Graphing <span class="count">1</span></h2>
+      <div class="links">
+        <a href="calculators/graphingcalculator/">Interactive Graphing Calculator</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+
+<footer class="footer">
+  <p>
+    <a href="/privacy/">Privacy Policy</a><span class="sep">·</span>
+    <a href="/terms/">Terms of Service</a><span class="sep">·</span>
+    <a href="/contact/">Contact</a>
+  </p>
+  <p>Calculator Choice © 2026</p>
+</footer>
+
 </body>
 </html>
